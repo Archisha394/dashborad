@@ -15,13 +15,21 @@ body {
   color: white;
   padding: 5px;
 }
+.main-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .India-map {
   display: flex;
   justify-content: end;
   padding-top: 1%;
+  height: 85vh;
   padding-right: 15%;
 }
 .India-map img {
-  height: 85vh;
   width: auto;
+}
+.slider {
+  background: linear-gradient(135deg, #2e4174, #020308);
 }

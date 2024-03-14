@@ -9,11 +9,22 @@ function App() {
         <img src={logo} alt="logo" />
         Datsol Solutions
       </div>
-      <div>
-        <PriceRangeSlider />
-      </div>
-      <div className="India-map">
-        <img src={map} alt="" />
+      <div className="main-content">
+        <div className="Slider-content">
+          <div className="slider">
+            <PriceRangeSlider />
+            <PriceRangeSlider />
+          </div>
+          <div className="slider">
+            <PriceRangeSlider />
+            <PriceRangeSlider />
+            <PriceRangeSlider />
+          </div>
+        </div>
+
+        <div className="India-map">
+          <img src={map} alt="" />
+        </div>
       </div>
     </div>
   );
