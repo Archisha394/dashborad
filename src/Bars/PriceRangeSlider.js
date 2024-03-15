@@ -22,6 +22,13 @@ const InputBox = styled(Box)`
   padding: 0 8px;
 `;
 
+const MainBox = styled(Box)`
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adjust shadow as needed */
+`;
+const PopulationText = styled(Typography)`
+  color: #000000; 
+`;
 export default function InputSlider() {
   const [minValue, setMinValue] = React.useState(0);
   const [maxValue, setMaxValue] = React.useState(100);
@@ -56,10 +63,10 @@ export default function InputSlider() {
   };
 
   return (
-    <Box sx={{ width: 250 }}>
-      <Typography id="input-slider" gutterBottom>
+    <MainBox sx={{ width: 250 }}>
+      <PopulationText variant="h6" id="input-slider" gutterBottom>
         Population:
-      </Typography>
+      </PopulationText>
       <Grid container spacing={2} alignItems="center">
         <Grid item xs={12} className="inputs">
           <Box
@@ -109,7 +116,7 @@ export default function InputSlider() {
           </StyledSliderWrapper>
         </Grid>
       </Grid>
-    </Box>
+    </MainBox>
   );
 }
 

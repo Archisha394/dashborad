@@ -30,6 +30,50 @@ body {
 .India-map img {
   width: auto;
 }
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  background: linear-gradient(to right, #2e447f, #0f1830);
+  padding: 1vh 0;
+  width: 93%;
+  border-radius: 0 15px 15px 0;
+  box-shadow: inset 0px 0px 4px rgba(255, 255, 255, 0.5),
+    0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+.buttons button {
+  background: linear-gradient(to right, #00abc2, #295b62);
+  border: none;
+  border-radius: 43px;
+  padding: 8px 16px; /* Adjust padding as needed */
+  display: flex;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  justify-content: space-around;
+}
+
+.buttons button img {
+  height: 4vh;
+}
+.Slider-content {
+  width: 20vw;
+  align-items: center;
+  justify-content: space-around;
+}
 .slider {
   background: linear-gradient(135deg, #2e4174, #020308);
+  border-radius: 0 30px 30px 0;
+  box-shadow: inset 0px 0px 4px rgba(255, 255, 255, 0.5),
+    0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+.apply-button {
+  background: linear-gradient(to right, #00abc2, #295b62);
+  border: none;
+  border-radius: 30px;
+  padding: 8px 16px; /* Adjust padding as needed */
+  align-items: center;
+
+  color: white;
+  cursor: pointer;
+  justify-content: space-around;
 }
