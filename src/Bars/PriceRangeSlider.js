@@ -8,7 +8,18 @@ import MuiInput from "@mui/material/Input";
 import "./PriceRangeSlider.css";
 
 const Input = styled(MuiInput)`
-  width: 42px;
+  width: 90px;
+  border: 1px solid #ffffff;
+  background-color: #f3f3f3;
+  border-radius: 6px;
+`;
+
+const StyledSliderWrapper = styled(Box)`
+  padding: 3px 20px;
+`;
+
+const InputBox = styled(Box)`
+  padding: 0 8px;
 `;
 
 export default function InputSlider() {
@@ -47,47 +58,65 @@ export default function InputSlider() {
   return (
     <Box sx={{ width: 250 }}>
       <Typography id="input-slider" gutterBottom>
-        Population
+        Population:
       </Typography>
       <Grid container spacing={2} alignItems="center">
         <Grid item xs={12} className="inputs">
-          <Box display="flex" justifyContent="space-between" alignItems="center">
-            <Input
-              value={minValue}
-              size="small"
-              onChange={handleMinInputChange}
-              onBlur={handleMinBlur}
-              inputProps={{
-                step: 10,
-                min: 0,
-                max: maxValue,
-                type: "number",
-                "aria-labelledby": "input-slider",
-              }}
-            />
-            <Input
-              value={maxValue}
-              size="small"
-              onChange={handleMaxInputChange}
-              onBlur={handleMaxBlur}
-              inputProps={{
-                step: 10,
-                min: minValue,
-                max: 100,
-                type: "number",
-                "aria-labelledby": "input-slider",
-              }}
-            />
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <InputBox>
+              <Input
+                value={minValue}
+                size="small"
+                onChange={handleMinInputChange}
+                onBlur={handleMinBlur}
+                inputProps={{
+                  step: 10,
+                  min: 0,
+                  max: maxValue,
+                  type: "number",
+                  "aria-labelledby": "input-slider",
+                }}
+              />
+            </InputBox>
+            <InputBox>
+              <Input
+                value={maxValue}
+                size="small"
+                onChange={handleMaxInputChange}
+                onBlur={handleMaxBlur}
+                inputProps={{
+                  step: 10,
+                  min: minValue,
+                  max: 100,
+                  type: "number",
+                  "aria-labelledby": "input-slider",
+                }}
+              />
+            </InputBox>
           </Box>
         </Grid>
         <Grid item xs={12}>
-          <Slider
-            value={[minValue, maxValue]}
-            onChange={handleSliderChange}
-            aria-labelledby="input-slider"
-          />
+          <StyledSliderWrapper>
+            <CustomSlider
+              value={[minValue, maxValue]}
+              onChange={handleSliderChange}
+              aria-labelledby="input-slider"
+            />
+          </StyledSliderWrapper>
         </Grid>
       </Grid>
     </Box>
   );
 }
+
+const CustomSlider = styled(Slider)`
+  .MuiSlider-track {
+    background: linear-gradient(to right, #ffb017, #ff6489);
+    border: none;
+    height: 8px;
+  }
+`;
