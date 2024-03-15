@@ -25,7 +25,6 @@ body {
   justify-content: end;
   padding-top: 1%;
   height: 85vh;
-  padding-right: 15%;
 }
 .India-map img {
   width: auto;
@@ -44,7 +43,8 @@ body {
   background: linear-gradient(to right, #00abc2, #295b62);
   border: none;
   border-radius: 43px;
-  padding: 8px 16px; /* Adjust padding as needed */
+  padding: 8px 14px; /* Adjust padding as needed */
+  padding-left: 5px;
   display: flex;
   align-items: center;
   color: white;
@@ -54,6 +54,8 @@ body {
 
 .buttons button img {
   height: 4vh;
+  margin-right: 10px;
+  margin-left: 0;
 }
 .Slider-content {
   width: 20vw;
@@ -69,11 +71,77 @@ body {
 .apply-button {
   background: linear-gradient(to right, #00abc2, #295b62);
   border: none;
-  border-radius: 30px;
-  padding: 8px 16px; /* Adjust padding as needed */
-  align-items: center;
+  border-radius: 10px;
+  padding: 6px 25px; /* Adjust padding as needed */
+  color: white;
+  display:flex;
+   justify-content: center;
+  cursor: pointer;
+}
 
+.apply-button-div{
+  align-items: center;
+  display:flex;
+   justify-content: center;
+}
+
+.basicbuttons button {
+  background: linear-gradient(to right, #00abc2, #295b62);
+  border: none;
+  border-radius: 43px;
+  padding: 8px 14px; /* Adjust padding as needed */
+  padding-left: 5px;
+  display: flex;
+  align-items: center;
   color: white;
   cursor: pointer;
   justify-content: space-around;
+  margin-right: 10px;
+}
+
+.basicbuttons button img {
+  height: 4vh;
+  margin-right: 10px;
+  margin-left: 0;
+}
+
+.right-content{
+  display: flex;
+  flex-direction: row;
+}
+
+.rightbox{
+  background: linear-gradient(135deg, #2e4174, #020308);
+  border-radius: 30px 0px 0px 30px;
+  box-shadow: inset 0px 0px 4px rgba(255, 255, 255, 0.5),
+    0px 0px 10px rgba(255, 255, 255, 0.5);
+  width: "40%";
+  height:50vh;
+  padding-right: 50px;
+}
+
+.rightheading{
+  padding:20px;
+  align-items: center;
+  padding-right: 30px;
+  color: "white";
+}
+.listItems{
+  display: flex;
+  flex-direction: row;
+}
+.listItems img{
+  height:5vh;
+  padding:5px 10px
+}
+
+.indiaHeader {
+  height:2.5vh;
+  padding-left:20%
+}
+
+.sideText{
+  color:white;
+  font-size: 0.8rem;
+  padding-top: 20px;
 }
