@@ -5,6 +5,7 @@ import rural from "./rural.png";
 import male from "./male.png";
 import basic from "./basic.png"
 import PriceRangeSlider from "./Bars/PriceRangeSlider";
+import Piechart from "./Piechart/Piechart"
 import man from "./man 1.png"
 import literacy from "./literacy 1.png"
 import people from "./people 1.png"
@@ -50,7 +51,8 @@ function App() {
         <div className="India-map">
           <img src={map} alt="" />
         </div>
-        <div className="right-content">
+        <div>
+         <div className="right-content">
           <div className="basicbuttons">
             <button>
               <img src={basic} alt="basic" />
@@ -86,8 +88,13 @@ function App() {
               <div className="sideText"> Female: </div>
             </div>
           </div>
-          
+
         </div>
+        <div className="piechart">
+          <Piechart/>
+          </div>
+        </div>
+       
       </div>
     </div>
   );
