@@ -149,3 +149,8 @@ body {
 .piechart{
   margin-top: 10%;
 }
+
+.inputs{
+  display: flex;
+  flex-direction: column;
+}

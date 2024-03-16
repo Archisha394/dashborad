@@ -1,19 +1,19 @@
 import logo from "./logo.png";
 import "./App.css";
-import map from "./Map.png";
-import rural from "./rural.png";
-import male from "./male.png";
-import basic from "./basic.png"
+import map from "./assets/Map.png";
+import rural from "./assets/rural.png";
+import male from "./assets/male.png";
+import basic from "./assets/basic.png"
 import PriceRangeSlider from "./Bars/PriceRangeSlider";
 import Piechart from "./Piechart/Piechart"
-import man from "./man 1.png"
-import literacy from "./literacy 1.png"
-import people from "./people 1.png"
-import harvest from "./harvest 1.png"
-import woman from "./woman 1.png"
-import sexeductn from "./sex-education 1.png"
-import India from "./INDIA.png"
-import piechart from "./pie-chart 1.png"
+import man from "./assets/man 1.png"
+import literacy from "./assets/literacy 1.png"
+import people from "./assets/people 1.png"
+import harvest from "./assets/harvest 1.png"
+import woman from "./assets/woman 1.png"
+import sexeductn from "./assets/sex-education 1.png"
+import India from "./assets/INDIA.png"
+import Input from "./Inputs"
 
 function App() {
   return (
@@ -47,8 +47,17 @@ function App() {
             </div>
           </div>
         </div>
-
+       
         <div className="India-map">
+        <div className="inputs">
+        <Input/>
+        <Input/>
+        <Input/>
+        <Input/>
+        <Input/>
+        <Input/>
+        <Input/>
+        </div>
           <img src={map} alt="" />
         </div>
         <div>
