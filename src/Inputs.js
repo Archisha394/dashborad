@@ -3,23 +3,37 @@ import "./Inputs.css"
 
 function InputField() {
   const [value, setValue] = useState('');
+  const [percentage, setPercentage] = useState(0);
 
   const handleChange = (event) => {
-    setValue(event.target.value);
+    const inputValue = event.target.value;
+    // Validate input to be between 0 and 100
+    if (/^\d{0,2}$/.test(inputValue) && parseInt(inputValue) <= 100) {
+      setValue(inputValue);
+      setPercentage(inputValue);
+    } else if (inputValue === '' || inputValue === '-') {
+      // Allow empty or negative values
+      setValue(inputValue);
+      setPercentage(0);
+    }
   };
 
   return (
     <div>
-      {/* Input field with placeholder */}
-      <p>You entered: {value}</p>
+      <p>{value}%</p>
       <input
-      className="inputs"
+        className="inputs"
         type="text"
-        placeholder="Number...." // Placeholder text
+        placeholder="Number...."
         value={value}
         onChange={handleChange}
       />
-      {/* Displaying the value entered in the input field */}
+      <div className="percentageLineContainer">
+        <div
+          className="percentageLine"
+          style={{ width: `${percentage}%` }}
+        ></div>
+      </div>
     </div>
   );
 }

@@ -1,3 +1,15 @@
-.inputs{
-    border-radius: 3px;
+.inputs {
+  border-radius: 3px;
+}
+.percentageLineContainer {
+  height: 20px;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.percentageLine {
+  height: 100%;
+  background-color: #ffad1b; /* Blue color for the percentage line */
+  
 }
