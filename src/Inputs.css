@@ -1,6 +1,10 @@
 .inputs {
   border-radius: 3px;
 }
+.value {
+  color: #96defc;
+  font-weight: bold;
+}
 .percentageLineContainer {
   height: 20px;
   width: 100%;
@@ -9,7 +13,7 @@
 }
 
 .percentageLine {
-  height: 100%;
-  background-color: #ffad1b; /* Blue color for the percentage line */
-  
+  height: 45%;
+  background-color: #ffad1b;
+  border-radius: 10px;
 }

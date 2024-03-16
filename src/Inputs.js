@@ -20,7 +20,7 @@ function InputField() {
 
   return (
     <div>
-      <p>{value}%</p>
+      <p className='value'>{value}%</p>
       <input
         className="inputs"
         type="text"

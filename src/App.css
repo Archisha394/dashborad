@@ -14,6 +14,7 @@ body {
   font-size: calc(10px + 2vmin);
   color: white;
   padding: 5px;
+  width: 100%;
 }
 .main-content {
   display: flex;
@@ -74,15 +75,15 @@ body {
   border-radius: 10px;
   padding: 6px 25px; /* Adjust padding as needed */
   color: white;
-  display:flex;
-   justify-content: center;
+  display: flex;
+  justify-content: center;
   cursor: pointer;
 }
 
-.apply-button-div{
+.apply-button-div {
   align-items: center;
-  display:flex;
-   justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .basicbuttons button {
@@ -105,52 +106,52 @@ body {
   margin-left: 0;
 }
 
-.right-content{
+.right-content {
   display: flex;
   flex-direction: row;
 }
 
-.rightbox{
+.rightbox {
   background: linear-gradient(135deg, #2e4174, #020308);
   border-radius: 30px 0px 0px 30px;
   box-shadow: inset 0px 0px 4px rgba(255, 255, 255, 0.5),
     0px 0px 10px rgba(255, 255, 255, 0.5);
   width: "40%";
-  height:50vh;
+  height: 50vh;
   padding-right: 50px;
 }
 
-.rightheading{
-  padding:20px;
+.rightheading {
+  padding: 20px;
   align-items: center;
   padding-right: 30px;
   color: "white";
 }
-.listItems{
+.listItems {
   display: flex;
   flex-direction: row;
 }
-.listItems img{
-  height:5vh;
-  padding:5px 10px
+.listItems img {
+  height: 5vh;
+  padding: 5px 10px;
 }
 
 .indiaHeader {
-  height:2.5vh;
-  padding-left:20%
+  height: 2.5vh;
+  padding-left: 20%;
 }
 
-.sideText{
-  color:white;
+.sideText {
+  color: white;
   font-size: 0.8rem;
   padding-top: 20px;
 }
 
-.piechart{
+.piechart {
   margin-top: 10%;
 }
 
-.inputs{
+.inputs {
   display: flex;
   flex-direction: column;
 }
