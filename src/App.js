@@ -17,7 +17,7 @@ import India from "./assets/INDIA.png";
 import Input from "./Inputs";
 import ImageMapAreas from "./comp/ImageMapAreas";
 import MaharashtraImage from "./assets/stateImages/Maharashtra.png";
-import APImage from "./assets/stateImages/AndhraPradesh.png";
+import AndhraPImage from "./assets/stateImages/AndhraPradesh.png";
 import AssamImage from "./assets/stateImages/Assam.png";
 import BiharImage from "./assets/stateImages/Bihar.png";
 import ChattisgarhImage from "./assets/stateImages/Chattisgarh.png";
@@ -39,6 +39,8 @@ import TelanganaImage from "./assets/stateImages/Telangana.png";
 import UpImage from "./assets/stateImages/UP.png";
 import WestBengalImage from "./assets/stateImages/WestBengal.png";
 import KeralaImage from "./assets/stateImages/Kerala.png";
+import JnKImage from './assets/stateImages/JnK.png'
+import DocumentCount from "./comp/DocumentCount";
 
 function App() {
   const [currentStateImage, setCurrentStateImage] = useState(null);
@@ -47,7 +49,7 @@ function App() {
     Maharashtra: MaharashtraImage,
     JnK: JnKImage,
     Telangana: TelanganaImage,
-    // AndhraPradesh: ,
+    AndhraPradesh: AndhraPImage ,
     TamilNadu: TNImage,
     Kerala: KeralaImage,
     Orissa: OrrisaImage,
@@ -67,7 +69,7 @@ function App() {
     Manipur: ManipurImage,
     // Mizoram: Miz
     // Tripura:
-    ArunachalPradesh: APImage,
+    // ArunachalPradesh: 
   };
 
   const handleClick = (stateName) => {
@@ -168,6 +170,8 @@ function App() {
           </div>
         </div>
       </div>
+      <DocumentCount />
+      
     </div>
   );
 }
