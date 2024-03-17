@@ -1,8 +1,10 @@
 import logo from "./logo.png";
 import "./App.css";
 import map from "./assets/Map.png";
-import rural from "./assets/rural.png";
+import ruralImage from "./assets/rural.png";
+import urbanImage from "./assets/urban.png";
 import male from "./assets/male.png";
+import female from "./assets/female.png"
 import basic from "./assets/basic.png"
 import PriceRangeSlider from "./Bars/PriceRangeSlider";
 import Piechart from "./Piechart/Piechart"
@@ -14,8 +16,25 @@ import woman from "./assets/woman 1.png"
 import sexeductn from "./assets/sex-education 1.png"
 import India from "./assets/INDIA.png"
 import Input from "./Inputs"
+import React, { useState } from 'react';
 
 function App() {
+  const [isRural, setIsRural] = useState(true);
+  const [isMale, setIsMale] = useState(true);
+  const [isBasic, setIsBasic] = useState(true);
+
+  const handleToggle_r = () => {
+    setIsRural(!isRural);
+  };
+  const handleToggle_m = () => {
+    setIsMale(!isMale);
+  };
+
+  const handleToggle_b = () => {
+    setIsBasic(!isBasic);
+  };
+
+
   return (
     <div className="App">
       <div className="header">
@@ -25,14 +44,14 @@ function App() {
       <div className="main-content">
         <div className="Slider-content">
           <div className="buttons">
-            <button>
-              <img src={rural} alt="rural" />
-              Rural
-            </button>
-            <button>
-              <img src={male} alt="male" />
-              Male
-            </button>
+          <button onClick={handleToggle_r}>
+        <img src={isRural ? ruralImage : urbanImage} alt={isRural ? 'rural' : 'urban'} />
+        <span>{isRural ? 'Rural' : 'Urban'}</span>
+      </button>
+      <button onClick={handleToggle_m}>
+        <img src={isMale ? male : female} alt={isMale ? 'male' : 'female'} />
+        <span>{isMale ? 'Male' : 'Female'}</span>
+      </button>
           </div>
           <div className="slider">
             <PriceRangeSlider />
@@ -63,9 +82,9 @@ function App() {
         <div>
          <div className="right-content">
           <div className="basicbuttons">
-            <button>
+            <button onClick={handleToggle_b}>
               <img src={basic} alt="basic" />
-              Basic
+              <span>{isBasic ? 'Basic' : 'Advance'}</span>
             </button>
           </div>
           <div className="rightbox">
