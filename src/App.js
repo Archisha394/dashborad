@@ -18,6 +18,7 @@ import Input from "./Inputs";
 import ImageMapAreas from "./comp/ImageMapAreas";
 import MaharashtraImage from './assets/stateImages/Maharashtra.png'
 import JnKImage from './assets/stateImages/JnK.png'
+hello
 
 function App() {
   const [currentStateImage, setCurrentStateImage] = useState(null);
