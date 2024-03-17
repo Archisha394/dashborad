@@ -4,15 +4,20 @@ import { collection, query, where, getDocs } from 'firebase/firestore';
 
 const DocumentCount = () => {
   const [districtName, setDistrictName] = useState('');
-  const [documents, setDocuments] = useState([]);
+  const [bankName, setBankName] = useState('');
+  const [documentCount, setDocumentCount] = useState(0);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
-      if (districtName) {
-        const q = query(collection(db, 'people'), where('District', '==', districtName));
+      if (districtName && bankName) {
+        const q = query(collection(db, 'people'), 
+                        where('District ', '==', districtName),
+                        where('Bank Name', '==', bankName));
         const querySnapshot = await getDocs(q);
-        setDocuments(querySnapshot.docs.map(doc => doc.data()));
+        const count = querySnapshot.size;
+        setDocumentCount(count);
+        console.log('Document count:', count); // Log document count to the console
       }
     } catch (error) {
       console.error('Error getting documents: ', error);
@@ -21,6 +26,10 @@ const DocumentCount = () => {
 
   const handleDistrictNameChange = (event) => {
     setDistrictName(event.target.value);
+  };
+
+  const handleBankNameChange = (event) => {
+    setBankName(event.target.value);
   };
 
   return (
@@ -33,26 +42,19 @@ const DocumentCount = () => {
             <input type="text" value={districtName} onChange={handleDistrictNameChange} />
           </label>
         </div>
+        <div>
+          <label>
+            Bank Name:
+            <input type="text" value={bankName} onChange={handleBankNameChange} />
+          </label>
+        </div>
         <button type="submit">Search</button>
       </form>
       <div>
-        {documents.length > 0 ? (
-          <ul>
-            {documents.map((document, index) => (
-              <li key={index}>
-                <strong>Document {index + 1}:</strong>
-                <ul>
-                  {Object.entries(document).map(([key, value]) => (
-                    <li key={key}>
-                      <strong>{key}:</strong> {value}
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ))}
-          </ul>
+        {documentCount > 0 ? (
+          <p>Number of Documents: {documentCount}</p>
         ) : (
-          <p>No documents found for the specified district.</p>
+          <p>No documents found for the specified district and bank name.</p>
         )}
       </div>
     </div>

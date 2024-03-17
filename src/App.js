@@ -39,17 +39,24 @@ import TelanganaImage from "./assets/stateImages/Telangana.png";
 import UpImage from "./assets/stateImages/UP.png";
 import WestBengalImage from "./assets/stateImages/WestBengal.png";
 import KeralaImage from "./assets/stateImages/Kerala.png";
-import JnKImage from './assets/stateImages/JnK.png'
+import JnKImage from "./assets/stateImages/JnK.png";
 import DocumentCount from "./comp/DocumentCount";
+import Nagaland from "./comp/Nagaland";
 
 function App() {
   const [currentStateImage, setCurrentStateImage] = useState(null);
+  const [currentStateComponent, setCurrentStateComponent] = useState(null);
+
+  const stateComponents = {
+    Nagaland: Nagaland,
+    // Add other state components as needed
+  };
 
   const stateImages = {
     Maharashtra: MaharashtraImage,
     JnK: JnKImage,
     Telangana: TelanganaImage,
-    AndhraPradesh: AndhraPImage ,
+    AndhraPradesh: AndhraPImage,
     TamilNadu: TNImage,
     Kerala: KeralaImage,
     Orissa: OrrisaImage,
@@ -69,12 +76,18 @@ function App() {
     Manipur: ManipurImage,
     // Mizoram: Miz
     // Tripura:
-    // ArunachalPradesh: 
+    // ArunachalPradesh:
   };
 
   const handleClick = (stateName) => {
     console.log(`Clicked on ${stateName}`);
     setCurrentStateImage(stateImages[stateName]);
+    setCurrentStateComponent(stateComponents[stateName]);
+  };
+
+  const handleAreaClick = (districtName) => {
+    console.log(`Clicked on district: ${districtName}`);
+    // Add your logic here for handling district clicks
   };
 
   return (
@@ -126,6 +139,10 @@ function App() {
             </map>
             <img src={currentStateImage || map} alt="" useMap="#indiaMap" />
           </div>
+          {/* Render the current state component only if currentStateImage is not null */}
+          {currentStateComponent && (
+            <currentStateComponent handleAreaClick={handleAreaClick} />
+          )}
         </div>
         <div>
           <div className="right-content">
@@ -170,8 +187,6 @@ function App() {
           </div>
         </div>
       </div>
-      <DocumentCount />
-      
     </div>
   );
 }
