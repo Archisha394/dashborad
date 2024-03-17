@@ -45,12 +45,8 @@ import Nagaland from "./comp/Nagaland";
 
 function App() {
   const [currentStateImage, setCurrentStateImage] = useState(null);
-  const [currentStateComponent, setCurrentStateComponent] = useState(null);
-
-  const stateComponents = {
-    Nagaland: Nagaland,
-    // Add other state components as needed
-  };
+  const [flag, setFlag] = useState(false);
+ 
 
   const stateImages = {
     Maharashtra: MaharashtraImage,
@@ -82,10 +78,11 @@ function App() {
   const handleClick = (stateName) => {
     console.log(`Clicked on ${stateName}`);
     setCurrentStateImage(stateImages[stateName]);
-    setCurrentStateComponent(stateComponents[stateName]);
+    setFlag(true);
   };
 
   const handleAreaClick = (districtName) => {
+
     console.log(`Clicked on district: ${districtName}`);
     // Add your logic here for handling district clicks
   };
@@ -135,14 +132,18 @@ function App() {
           <div className="India-map">
             {/* Use an image map for clickable areas */}
             <map name="indiaMap">
-              <ImageMapAreas handleClick={handleClick} />
+              <ImageMapAreas handleClick={handleClick}  />
             </map>
-            <img src={currentStateImage || map} alt="" useMap="#indiaMap" />
+            <map name="nagaland">
+              <Nagaland handleAreaClick={handleAreaClick}  />
+            </map>
+            {currentStateImage === null ? (
+              <img src= {map} alt="" useMap="#indiaMap" />
+            ) : (
+              <img src={currentStateImage} alt="" useMap="#nagaland" />
+            )}
           </div>
-          {/* Render the current state component only if currentStateImage is not null */}
-          {currentStateComponent && (
-            <currentStateComponent handleAreaClick={handleAreaClick} />
-          )}
+          
         </div>
         <div>
           <div className="right-content">

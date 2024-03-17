@@ -1,9 +1,11 @@
 import React from "react";
 
 const ImageMapAreas = ({ handleClick }) => {
+  
   return (
     <>
       {/* Add map areas for each state */}
+
       <area
         alt="JnK"
         title="JnK"
