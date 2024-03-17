@@ -15,7 +15,7 @@ const ImageMapAreas = ({ handleClick }) => {
         alt="Maharashtra"
         title="Maharashtra"
         onClick={() => handleClick("Maharashtra")}
-        coords="136,555,209,515,374,513,367,594,313,557,155,685,134,582,133,573,131,566"
+        coords="296,1949,396,1765,664,1777,840,1589,1070,1360,1370,1668,1438,1788,1594,1828,1686,2008,1570,2348,1314,2368,1002,2600,574,2332"
         shape="poly"
       />
       {/* Add more area tags as needed */}
