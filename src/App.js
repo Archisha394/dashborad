@@ -30,7 +30,7 @@ import KarnatakaImage from "./assets/stateImages/Karnataka.png";
 import MPImage from "./assets/stateImages/MP.png";
 import ManipurImage from "./assets/stateImages/Manipur.png";
 import MeghalayaImage from "./assets/stateImages/Meghalaya.png";
-import NagalandImage from "./assets/stateImages/Nagaland.png";
+import NagalandImage from "./assets/stateImages/Nagaland.jpg";
 import OrrisaImage from "./assets/stateImages/Orrisa.png";
 import PunjabImage from "./assets/stateImages/Punjab.png";
 import RajasthanImage from "./assets/stateImages/Rajasthan.png";
@@ -43,10 +43,12 @@ import JnKImage from "./assets/stateImages/JnK.png";
 import DocumentCount from "./comp/DocumentCount";
 import Nagaland from "./comp/Nagaland";
 
+import db from "./comp/firebase-config";
+import { collection, query, where, getDocs } from "firebase/firestore";
+
 function App() {
   const [currentStateImage, setCurrentStateImage] = useState(null);
   const [flag, setFlag] = useState(false);
- 
 
   const stateImages = {
     Maharashtra: MaharashtraImage,
@@ -81,10 +83,34 @@ function App() {
     setFlag(true);
   };
 
-  const handleAreaClick = (districtName) => {
+  const [population, setPopulation] = useState(null);
 
+  const handleAreaClick = async (districtName) => {
     console.log(`Clicked on district: ${districtName}`);
-    // Add your logic here for handling district clicks
+    try {
+      if (districtName) {
+        const q = query(
+          collection(db, "census"),
+          where("Name", "==", districtName),
+          where("TRU", "==", "Total")
+        );
+        const querySnapshot = await getDocs(q);
+
+        if (!querySnapshot.empty) {
+          const docData = querySnapshot.docs[0].data();
+          const totHLF = docData.TOT_HL_F;
+          setPopulation(totHLF);
+          console.log("Population:", totHLF);
+        } else {
+          console.log("No matching document found.");
+          setPopulation(null);
+        }
+      } else {
+        console.log("Missing parameter: districtName");
+      }
+    } catch (error) {
+      console.error("Error fetching document: ", error);
+    }
   };
 
   return (
@@ -132,18 +158,17 @@ function App() {
           <div className="India-map">
             {/* Use an image map for clickable areas */}
             <map name="indiaMap">
-              <ImageMapAreas handleClick={handleClick}  />
+              <ImageMapAreas handleClick={handleClick} />
             </map>
             <map name="nagaland">
-              <Nagaland handleAreaClick={handleAreaClick}  />
+              <Nagaland handleAreaClick={handleAreaClick} />
             </map>
             {currentStateImage === null ? (
-              <img src= {map} alt="" useMap="#indiaMap" />
+              <img src={map} alt="" useMap="#indiaMap" />
             ) : (
               <img src={currentStateImage} alt="" useMap="#nagaland" />
             )}
           </div>
-          
         </div>
         <div>
           <div className="right-content">
@@ -159,8 +184,14 @@ function App() {
               </div>
               <div className="listItems">
                 <img src={people} alt="" />
-                <div className="sideText"> Populations: </div>
+                <div className="sideText">
+                  {" "}
+                  Population: {population !== null
+                    ? population
+                    : "Loading..."}{" "}
+                </div>
               </div>
+
               <div className="listItems">
                 <img src={sexeductn} alt="" />
                 <div className="sideText"> Sex-ratio: </div>

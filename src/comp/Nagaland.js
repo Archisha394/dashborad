@@ -2,8 +2,7 @@ import React from "react";
 
 const Nagaland = ({ handleAreaClick }) => {
 
-    console.log("Props received by Nagaland:", handleAreaClick);
-
+    
   return (
     <>
       <area
