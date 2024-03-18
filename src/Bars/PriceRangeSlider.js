@@ -15,7 +15,7 @@ const Input = styled(MuiInput)`
 `;
 
 const StyledSliderWrapper = styled(Box)`
-  padding: 3px 20px;
+  padding-left: 10px;
 `;
 
 const InputBox = styled(Box)`
@@ -27,7 +27,7 @@ const MainBox = styled(Box)`
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adjust shadow as needed */
 `;
 const PopulationText = styled(Typography)`
-  color:white;
+  color: white;
 `;
 export default function InputSlider() {
   const [minValue, setMinValue] = React.useState(0);
@@ -64,16 +64,17 @@ export default function InputSlider() {
 
   return (
     <MainBox sx={{ width: 250 }}>
-      <PopulationText className="populationtext" variant="h6" id="input-slider" gutterBottom>
+      <PopulationText
+        className="populationtext"
+        variant="h6"
+        id="input-slider"
+        gutterBottom
+      >
         Population:
       </PopulationText>
       <Grid container spacing={2} alignItems="center">
         <Grid item xs={12} className="inputs">
-          <Box
-            display="flex"
-            justifyContent="space-around"
-            alignItems="center"
-          >
+          <Box display="flex" justifyContent="space-around" alignItems="center">
             <InputBox>
               <Input
                 value={minValue}

@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+//import React, { useState } from "react";
 import logo from "./logo.png";
 import "./App.css";
 import map from "./assets/Map.png";
 import ruralImage from "./assets/rural.png";
 import urbanImage from "./assets/urban.png";
 import male from "./assets/male.png";
-import female from "./assets/female.png"
+import female from "./assets/female.png";
 import basic from "./assets/basic.png";
 import PriceRangeSlider from "./Bars/PriceRangeSlider";
 import Piechart from "./Piechart/Piechart";
@@ -47,8 +47,8 @@ import Nagaland from "./comp/Nagaland";
 
 import db from "./comp/firebase-config";
 import { collection, query, where, getDocs } from "firebase/firestore";
-import React, { useState } from 'react';
-import Plot from "./Plots"
+import React, { useState } from "react";
+import Plot from "./Plots";
 import PopupContent from "./PopupContent";
 
 function App() {
@@ -123,7 +123,6 @@ function App() {
   const [isBasic, setIsBasic] = useState(true);
   const [showPopup, setShowPopup] = useState(false); // State for managing popup visibility
 
-
   const handleToggle_r = () => {
     setIsRural(!isRural);
   };
@@ -138,7 +137,6 @@ function App() {
     }
   };
 
-
   const handleClosePopup = () => {
     setShowPopup(false); // Close the popup
   };
@@ -152,14 +150,20 @@ function App() {
       <div className="main-content">
         <div className="Slider-content">
           <div className="buttons">
-          <button onClick={handleToggle_r}>
-        <img src={isRural ? ruralImage : urbanImage} alt={isRural ? 'rural' : 'urban'} />
-        <span>{isRural ? 'Rural' : 'Urban'}</span>
-      </button>
-      <button onClick={handleToggle_m}>
-        <img src={isMale ? male : female} alt={isMale ? 'male' : 'female'} />
-        <span>{isMale ? 'Male' : 'Female'}</span>
-      </button>
+            <button onClick={handleToggle_r}>
+              <img
+                src={isRural ? ruralImage : urbanImage}
+                alt={isRural ? "rural" : "urban"}
+              />
+              <span>{isRural ? "Rural" : "Urban"}</span>
+            </button>
+            <button onClick={handleToggle_m}>
+              <img
+                src={isMale ? male : female}
+                alt={isMale ? "male" : "female"}
+              />
+              <span>{isMale ? "Male" : "Female"}</span>
+            </button>
           </div>
           <div className="slider">
             <PriceRangeSlider />
@@ -174,7 +178,6 @@ function App() {
             </div>
           </div>
         </div>
-
         <div className="India-map">
           <div className="inputs">
             <Input />
@@ -205,7 +208,7 @@ function App() {
             <div className="basicbuttons">
               <button onClick={handleToggle_b}>
                 <img src={basic} alt="basic" />
-                <span>{isBasic ? 'Basic' : 'Advance'}</span>
+                <span>{isBasic ? "Basic" : "Advance"}</span>
               </button>
             </div>
             <div className="rightbox">
@@ -248,7 +251,8 @@ function App() {
             <Plot />
           </div>
         </div>
-        {showPopup && <PopupContent onClose={handleClosePopup} />} {/* Render the popup based on the state */}
+        {showPopup && <PopupContent onClose={handleClosePopup} />}{" "}
+        {/* Render the popup based on the state */}
       </div>
     </div>
   );
