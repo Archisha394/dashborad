@@ -74,7 +74,7 @@ export default function InputSlider() {
       </PopulationText>
       <Grid container spacing={2} alignItems="center" justifyContent="center">
         <Grid item xs={12} className="inputs">
-          <Box display="flex" justifyContent="center" alignItems="center" paddingLeft="20%">
+          <Box display="flex" justifyContent="center" alignItems="center" paddingLeft="10%">
             <InputBox>
               <Input
                 value={minValue}
@@ -107,7 +107,7 @@ export default function InputSlider() {
             </InputBox>
           </Box>
         </Grid>
-        <Grid item xs={12} marginLeft="20%">
+        <Grid item xs={12} marginLeft="10%">
           <StyledSliderWrapper>
             <CustomSlider
               value={[minValue, maxValue]}
