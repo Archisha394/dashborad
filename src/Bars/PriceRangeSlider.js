@@ -72,9 +72,9 @@ export default function InputSlider() {
       >
         Population:
       </PopulationText>
-      <Grid container spacing={2} alignItems="center">
+      <Grid container spacing={2} alignItems="center" justifyContent="center">
         <Grid item xs={12} className="inputs">
-          <Box display="flex" justifyContent="space-around" alignItems="center">
+          <Box display="flex" justifyContent="center" alignItems="center" paddingLeft="20%">
             <InputBox>
               <Input
                 value={minValue}
@@ -107,12 +107,13 @@ export default function InputSlider() {
             </InputBox>
           </Box>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} marginLeft="20%">
           <StyledSliderWrapper>
             <CustomSlider
               value={[minValue, maxValue]}
               onChange={handleSliderChange}
               aria-labelledby="input-slider"
+              className="sliderr"
             />
           </StyledSliderWrapper>
         </Grid>
