@@ -23,7 +23,7 @@ const InputBox = styled(Box)`
 `;
 
 const MainBox = styled(Box)`
-  border-radius: 10px;
+  border-radius: 0px 10px 10px 0px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adjust shadow as needed */
 `;
 const PopulationText = styled(Typography)`
