@@ -17,11 +17,15 @@ import sexeductn from "./assets/sex-education 1.png"
 import India from "./assets/INDIA.png"
 import Input from "./Inputs"
 import React, { useState } from 'react';
+import Plot from "./Plots"
+import PopupContent from "./PopupContent";
 
 function App() {
   const [isRural, setIsRural] = useState(true);
   const [isMale, setIsMale] = useState(true);
   const [isBasic, setIsBasic] = useState(true);
+  const [showPopup, setShowPopup] = useState(false); // State for managing popup visibility
+
 
   const handleToggle_r = () => {
     setIsRural(!isRural);
@@ -32,8 +36,15 @@ function App() {
 
   const handleToggle_b = () => {
     setIsBasic(!isBasic);
+    if (isBasic) {
+      setShowPopup(true); // Show the popup when toggling to "Advance"
+    }
   };
 
+
+  const handleClosePopup = () => {
+    setShowPopup(false); // Close the popup
+  };
 
   return (
     <div className="App">
@@ -119,10 +130,10 @@ function App() {
 
         </div>
         <div className="piechart">
-          <Piechart/>
+          <Plot/>
           </div>
         </div>
-       
+        {showPopup && <PopupContent onClose={handleClosePopup} />} {/* Render the popup based on the state */}
       </div>
     </div>
   );

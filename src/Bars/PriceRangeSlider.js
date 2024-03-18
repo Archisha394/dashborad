@@ -71,7 +71,7 @@ export default function InputSlider() {
         <Grid item xs={12} className="inputs">
           <Box
             display="flex"
-            justifyContent="space-between"
+            justifyContent="space-around"
             alignItems="center"
           >
             <InputBox>
