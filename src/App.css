@@ -25,7 +25,7 @@ body {
   display: flex;
   justify-content: end;
   padding-top: 1%;
-  height: 85vh; 
+  height: 85vh;
 }
 .India-map img {
   object-fit: contain; /* or "none" depending on your preference */
@@ -157,4 +157,5 @@ body {
 .inputs {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }

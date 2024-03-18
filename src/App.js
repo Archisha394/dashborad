@@ -139,6 +139,8 @@ function App() {
 
   const handleClosePopup = () => {
     setShowPopup(false); // Close the popup
+    setIsBasic(true);
+
   };
 
   return (
@@ -180,13 +182,17 @@ function App() {
         </div>
         <div className="India-map">
           <div className="inputs">
-            <Input />
-            <Input />
-            <Input />
-            <Input />
-            <Input />
-            <Input />
-            <Input />
+            <div className="part1">
+              <Input />
+              <Input />
+              <Input />
+            </div>
+            <div className="part2">
+              <Input />
+              <Input />
+              <Input />
+              <Input />
+            </div>
           </div>
           <div className="India-map">
             {/* Use an image map for clickable areas */}
