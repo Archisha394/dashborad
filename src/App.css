@@ -25,12 +25,12 @@ body {
   display: flex;
   justify-content: end;
   padding-top: 1%;
-  /* height: 85vh; */
+  height: 85vh; 
 }
 .India-map img {
   object-fit: contain; /* or "none" depending on your preference */
   width: 100%;
-  height: 100%
+  height: 100%;
 }
 .buttons {
   display: flex;
@@ -63,7 +63,7 @@ body {
 .Slider-content {
   width: 20vw;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 .slider {
   background: linear-gradient(135deg, #2e4174, #020308);
@@ -119,12 +119,13 @@ body {
   box-shadow: inset 0px 0px 4px rgba(255, 255, 255, 0.5),
     0px 0px 10px rgba(255, 255, 255, 0.5);
   width: "40%";
-  height: 50vh;
-  padding-right: 50px;
+  height: fit-content;
+  padding-right: 5vw;
+  padding-bottom: 1vh;
 }
 
 .rightheading {
-  padding: 20px;
+  padding: 15px;
   align-items: center;
   padding-right: 30px;
   color: "white";
@@ -132,10 +133,11 @@ body {
 .listItems {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 .listItems img {
-  height: 5vh;
-  padding: 5px 10px;
+  height: 3vh;
+  margin: 5px 10px;
 }
 
 .indiaHeader {
@@ -145,8 +147,7 @@ body {
 
 .sideText {
   color: white;
-  font-size: 0.8rem;
-  padding-top: 20px;
+  font-size: 0.5rem;
 }
 
 .piechart {

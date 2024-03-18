@@ -21,13 +21,13 @@ function InputField() {
   return (
     <div>
       <p className='value'>{value}%</p>
-      <input
+      {/* <input
         className="inputs"
         type="text"
         placeholder="Number...."
         value={value}
         onChange={handleChange}
-      />
+      /> */}
       <div className="percentageLineContainer">
         <div
           className="percentageLine"
