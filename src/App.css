@@ -23,9 +23,8 @@ body {
 }
 .India-map {
   height: 85vh; /* 85% of the viewport height */
-  display: flex;
-  justify-content: flex-end; /* Align the map to the right */
-  padding-top: 1%; /* Add some padding from the top */
+  display: flex; 
+  width:60%
 }
 
 .India-map img {
