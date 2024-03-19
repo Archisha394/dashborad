@@ -1,5 +1,7 @@
-import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
-import IndiaGeoJSON from "./assets/Indian_States.json"; // Import India GeoJSON data
+import { MapContainer, TileLayer, GeoJSON, useMapEvents } from "react-leaflet";
+import L from "leaflet";
+import IndiaStateGeoJSON from "./assets/Indian_States.json"; // Import India State GeoJSON data
+import IndiaDistrictGeoJSON from "./assets/india_district.json"; // Import India District GeoJSON data
 import "leaflet/dist/leaflet.css"; // Import Leaflet CSS
 
 import logo from "./logo.png";
@@ -20,33 +22,6 @@ import woman from "./assets/woman 1.png";
 import sexeductn from "./assets/sex-education 1.png";
 import India from "./assets/INDIA.png";
 import Input from "./Inputs";
-import ImageMapAreas from "./comp/ImageMapAreas";
-import MaharashtraImage from "./assets/stateImages/Maharashtra.png";
-import AndhraPImage from "./assets/stateImages/AndhraPradesh.png";
-import AssamImage from "./assets/stateImages/Assam.png";
-import BiharImage from "./assets/stateImages/Bihar.png";
-import ChattisgarhImage from "./assets/stateImages/Chattisgarh.png";
-import DelhiImage from "./assets/stateImages/Delhi.png";
-import GujaratImage from "./assets/stateImages/Gujarat.png";
-import HaryanaImage from "./assets/stateImages/Haryana.png";
-import HPImage from "./assets/stateImages/HimachalPradesh.png";
-import JharkhandImage from "./assets/stateImages/Jharakhand.png";
-import KarnatakaImage from "./assets/stateImages/Karnataka.png";
-import MPImage from "./assets/stateImages/MP.png";
-import ManipurImage from "./assets/stateImages/Manipur.png";
-import MeghalayaImage from "./assets/stateImages/Meghalaya.png";
-import NagalandImage from "./assets/stateImages/Nagaland.jpg";
-import OrrisaImage from "./assets/stateImages/Orrisa.png";
-import PunjabImage from "./assets/stateImages/Punjab.png";
-import RajasthanImage from "./assets/stateImages/Rajasthan.png";
-import TNImage from "./assets/stateImages/TamilNadu.png";
-import TelanganaImage from "./assets/stateImages/Telangana.png";
-import UpImage from "./assets/stateImages/UP.png";
-import WestBengalImage from "./assets/stateImages/WestBengal.png";
-import KeralaImage from "./assets/stateImages/Kerala.png";
-import JnKImage from "./assets/stateImages/JnK.png";
-import DocumentCount from "./comp/DocumentCount";
-import Nagaland from "./comp/Nagaland";
 
 import db from "./comp/firebase-config";
 import { collection, query, where, getDocs } from "firebase/firestore";
@@ -55,72 +30,68 @@ import Plot from "./Plots";
 import PopupContent from "./PopupContent";
 
 function App() {
-  const [currentStateImage, setCurrentStateImage] = useState(null);
-  const [flag, setFlag] = useState(false);
+  const [selectedState, setSelectedState] = useState(null);
+  const [selectedDistrict, setSelectedDistrict] = useState(null);
+  const [selectedDistricts, setSelectedDistricts] = useState(null);
+  const [districtLayers, setDistrictLayers] = useState([]); // Array to store district layers
 
-  const stateImages = {
-    Maharashtra: MaharashtraImage,
-    JnK: JnKImage,
-    Telangana: TelanganaImage,
-    AndhraPradesh: AndhraPImage,
-    TamilNadu: TNImage,
-    Kerala: KeralaImage,
-    Orissa: OrrisaImage,
-    Jharkhand: JharkhandImage,
-    UttarPradesh: UpImage,
-    Punjab: PunjabImage,
-    HimachalPradesh: HPImage,
-    // Uttarakhand: utt
-    Bihar: BiharImage,
-    Haryana: HaryanaImage,
-    WestBengal: WestBengalImage,
-    Chattisgarh: ChattisgarhImage,
-    Gujarat: GujaratImage,
-    Meghalaya: MeghalayaImage,
-    Assam: AssamImage,
-    Nagaland: NagalandImage,
-    Manipur: ManipurImage,
-    // Mizoram: Miz
-    // Tripura:
-    // ArunachalPradesh:
+  function MapClickHandler() {
+    const map = useMapEvents({
+      click: () => {
+        console.log("Clicked on map tile");
+      },
+    });
+
+    return null;
+  }
+
+  const handleStateClick = (e) => {
+    const stateName = e.layer.feature.properties.NAME_1;
+    setSelectedState(stateName);
+  
+    const stateDistricts = IndiaDistrictGeoJSON.features.filter(
+      (feature) => feature.properties.NAME_1 === stateName
+    );
+    setSelectedDistricts(stateDistricts);
+  
+    const bounds = e.layer.getBounds();
+    const map = e.layer._map;
+    map.fitBounds(bounds, { padding: [10, 10] }); // Adjust padding as needed
+    
+    // Remove all district layers
+    districtLayers.forEach(layer => layer.removeFrom(map));
+    setDistrictLayers([]);
+  
+    // Render new district layers
+    const newDistrictLayers = stateDistricts.map((district) => {
+      return L.geoJSON(district, {
+        style: {
+          color: "#3388ff", // Border color
+          fillColor: "transparent",
+          fillOpacity: 0,
+          weight: 2,
+          pointerEvents: "auto",
+        },
+        onEachFeature: (feature, layer) => {
+          layer.on('click', (e) => handleDistrictClick(e));
+        }
+      }).addTo(map);
+    });
+    setDistrictLayers(newDistrictLayers);
   };
 
-  const handleClick = (stateName) => {
-    console.log(`Clicked on ${stateName}`);
-    setCurrentStateImage(stateImages[stateName]);
-    setFlag(true);
+  const handleDistrictClick = (e) => {
+    const districtName = e.layer.feature.properties.NAME_2;
+    console.log(`Clicked on district: ${districtName}`);
+    setSelectedDistrict(districtName);
+  };
+
+  const handleMapClick = () => {
+    setSelectedState(null);
+    setSelectedDistricts(null);
   };
 
   const [population, setPopulation] = useState(null);
-
-  const handleAreaClick = async (districtName) => {
-    console.log(`Clicked on district: ${districtName}`);
-    try {
-      if (districtName) {
-        const q = query(
-          collection(db, "census"),
-          where("Name", "==", districtName),
-          where("TRU", "==", "Total")
-        );
-        const querySnapshot = await getDocs(q);
-
-        if (!querySnapshot.empty) {
-          const docData = querySnapshot.docs[0].data();
-          const totHLF = docData.TOT_HL_F;
-          setPopulation(totHLF);
-          console.log("Population:", totHLF);
-        } else {
-          console.log("No matching document found.");
-          setPopulation(null);
-        }
-      } else {
-        console.log("Missing parameter: districtName");
-      }
-    } catch (error) {
-      console.error("Error fetching document: ", error);
-    }
-  };
-
   const [isRural, setIsRural] = useState(true);
   const [isMale, setIsMale] = useState(true);
   const [isBasic, setIsBasic] = useState(true);
@@ -202,8 +173,43 @@ function App() {
               zoom={5}
               style={{ height: "80vh", width: "100%" }}
             >
-              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-              <GeoJSON data={IndiaGeoJSON.features} />
+              <TileLayer
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              {/* Render State GeoJSON */}
+              <GeoJSON
+                data={IndiaStateGeoJSON.features}
+                style={() => ({
+                  color: "#3388ff", // Border color
+                  fillColor: "transparent",
+                  fillOpacity: 0,
+                  weight: 1,
+                  pointerEvents: "auto", // Enable pointer events for clicking
+                })}
+                eventHandlers={{
+                  click: handleStateClick,
+                }}
+              />
+              {/* Render District GeoJSON when a state is clicked */}
+              {selectedState && (
+                <GeoJSON
+                  key={selectedState} // Add a unique key to force re-rendering when the state changes
+                  data={IndiaDistrictGeoJSON.features.filter(
+                    (feature) => feature.properties.NAME_1 === selectedState
+                  )}
+                  style={() => ({
+                    color: "#3388ff", // Border color
+                    fillColor: "transparent",
+                    fillOpacity: 0,
+                    weight: 2,
+                    pointerEvents: "auto",
+                  })}
+                  eventHandlers={{
+                    click: handleDistrictClick,
+                  }}
+                />
+              )}
+              <MapClickHandler />
             </MapContainer>
           </div>
         </div>
@@ -228,7 +234,6 @@ function App() {
                     : "Loading..."}{" "}
                 </div>
               </div>
-
               <div className="listItems">
                 <img src={sexeductn} alt="" />
                 <div className="sideText"> Sex-ratio: </div>

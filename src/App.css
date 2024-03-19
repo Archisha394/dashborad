@@ -22,10 +22,16 @@ body {
   justify-content: space-between;
 }
 .India-map {
-  height: 85vh; /* 85% of the viewport height */
-  display: flex; 
-  width:60%
+  height: 85vh;
+  display: flex;
+  width: 60%;
+  background-color: transparent;
 }
+
+.leaflet-overlay-pane .leaflet-interactive {
+  z-index: 100000; /* Adjust the value as needed */
+}
+
 
 .India-map img {
   object-fit: contain; /* or "none" depending on your preference */
