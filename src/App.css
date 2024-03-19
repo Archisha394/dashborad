@@ -22,11 +22,12 @@ body {
   justify-content: space-between;
 }
 .India-map {
+  height: 85vh; /* 85% of the viewport height */
   display: flex;
-  justify-content: end;
-  padding-top: 1%;
-  height: 85vh;
+  justify-content: flex-end; /* Align the map to the right */
+  padding-top: 1%; /* Add some padding from the top */
 }
+
 .India-map img {
   object-fit: contain; /* or "none" depending on your preference */
   width: 100%;

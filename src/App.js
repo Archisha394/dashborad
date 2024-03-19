@@ -1,4 +1,7 @@
-//import React, { useState } from "react";
+import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
+import IndiaGeoJSON from './assets/india_district.geojson'; // Import India GeoJSON data
+import 'leaflet/dist/leaflet.css'; // Import Leaflet CSS
+
 import logo from "./logo.png";
 import "./App.css";
 import map from "./assets/Map.png";
@@ -195,19 +198,11 @@ function App() {
             </div>
           </div>
           <div className="India-map">
-            {/* Use an image map for clickable areas */}
-            <map name="indiaMap">
-              <ImageMapAreas handleClick={handleClick} />
-            </map>
-            <map name="nagaland">
-              <Nagaland handleAreaClick={handleAreaClick} />
-            </map>
-            {currentStateImage === null ? (
-              <img src={map} alt="" useMap="#indiaMap" />
-            ) : (
-              <img src={currentStateImage} alt="" useMap="#nagaland" />
-            )}
-          </div>
+          <MapContainer center={[20.5937, 78.9629]} zoom={5} style={{ height: '500px', width: '100%' }}>
+            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            <GeoJSON data={IndiaGeoJSON} />
+          </MapContainer>
+        </div>
         </div>
         <div>
           <div className="right-content">
