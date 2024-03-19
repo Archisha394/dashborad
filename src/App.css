@@ -22,9 +22,15 @@ body {
   justify-content: space-between;
 }
 .India-map {
-  height: 85vh; /* 85% of the viewport height */
-  display: flex; 
-  width:60%
+  height: 100vh; /* 85% of the viewport height */
+  display: flex;
+  width: 90%;
+}
+.India-map-outside {
+  height: 100vh; /* 85% of the viewport height */
+  display: flex;
+  width: 100%;
+  margin-left: 15%;
 }
 
 .India-map img {
