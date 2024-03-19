@@ -1,0 +1,19 @@
+.inputs {
+  border-radius: 3px;
+}
+.value {
+  color: #96defc;
+  font-weight: bold;
+}
+.percentageLineContainer {
+  height: 20px;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.percentageLine {
+  height: 45%;
+  background-color: #ffad1b;
+  border-radius: 10px;
+}

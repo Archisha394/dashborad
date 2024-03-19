@@ -1,0 +1,159 @@
+body {
+  background-color: #141d36;
+}
+.header img {
+  width: 1.5vw;
+  padding-right: 5px;
+}
+.header {
+  background: linear-gradient(to bottom, #2e437d, #101933);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 5px;
+  width: 100%;
+}
+.main-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.India-map {
+  display: flex;
+  justify-content: end;
+  padding-top: 1%;
+  /* height: 85vh; */
+}
+.India-map img {
+  object-fit: contain; /* or "none" depending on your preference */
+  width: 100%;
+  height: 100%
+}
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  background: linear-gradient(to right, #2e447f, #0f1830);
+  padding: 1vh 0;
+  width: 93%;
+  border-radius: 0 15px 15px 0;
+  box-shadow: inset 0px 0px 4px rgba(255, 255, 255, 0.5),
+    0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+.buttons button {
+  background: linear-gradient(to right, #00abc2, #295b62);
+  border: none;
+  border-radius: 43px;
+  padding: 8px 14px; /* Adjust padding as needed */
+  padding-left: 5px;
+  display: flex;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  justify-content: space-around;
+}
+
+.buttons button img {
+  height: 4vh;
+  margin-right: 10px;
+  margin-left: 0;
+}
+.Slider-content {
+  width: 20vw;
+  align-items: center;
+  justify-content: space-around;
+}
+.slider {
+  background: linear-gradient(135deg, #2e4174, #020308);
+  border-radius: 0 30px 30px 0;
+  box-shadow: inset 0px 0px 4px rgba(255, 255, 255, 0.5),
+    0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+.apply-button {
+  background: linear-gradient(to right, #00abc2, #295b62);
+  border: none;
+  border-radius: 10px;
+  padding: 6px 25px; /* Adjust padding as needed */
+  color: white;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.apply-button-div {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.basicbuttons button {
+  background: linear-gradient(to right, #00abc2, #295b62);
+  border: none;
+  border-radius: 43px;
+  padding: 8px 14px; /* Adjust padding as needed */
+  padding-left: 5px;
+  display: flex;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  justify-content: space-around;
+  margin-right: 10px;
+}
+
+.basicbuttons button img {
+  height: 4vh;
+  margin-right: 10px;
+  margin-left: 0;
+}
+
+.right-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.rightbox {
+  background: linear-gradient(135deg, #2e4174, #020308);
+  border-radius: 30px 0px 0px 30px;
+  box-shadow: inset 0px 0px 4px rgba(255, 255, 255, 0.5),
+    0px 0px 10px rgba(255, 255, 255, 0.5);
+  width: "40%";
+  height: 50vh;
+  padding-right: 50px;
+}
+
+.rightheading {
+  padding: 20px;
+  align-items: center;
+  padding-right: 30px;
+  color: "white";
+}
+.listItems {
+  display: flex;
+  flex-direction: row;
+}
+.listItems img {
+  height: 5vh;
+  padding: 5px 10px;
+}
+
+.indiaHeader {
+  height: 2.5vh;
+  padding-left: 20%;
+}
+
+.sideText {
+  color: white;
+  font-size: 0.8rem;
+  padding-top: 20px;
+}
+
+.piechart {
+  margin-top: 10%;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+}
