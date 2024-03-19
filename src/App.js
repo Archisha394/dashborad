@@ -1,6 +1,6 @@
-import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
-import IndiaGeoJSON from './assets/india_district.geojson'; // Import India GeoJSON data
-import 'leaflet/dist/leaflet.css'; // Import Leaflet CSS
+import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
+import IndiaGeoJSON from "./assets/india_district.json"; // Import India GeoJSON data
+import "leaflet/dist/leaflet.css"; // Import Leaflet CSS
 
 import logo from "./logo.png";
 import "./App.css";
@@ -143,7 +143,6 @@ function App() {
   const handleClosePopup = () => {
     setShowPopup(false); // Close the popup
     setIsBasic(true);
-
   };
 
   return (
@@ -198,11 +197,15 @@ function App() {
             </div>
           </div>
           <div className="India-map">
-          <MapContainer center={[20.5937, 78.9629]} zoom={5} style={{ height: '800px', width: '100%' }}>
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            {/* <GeoJSON data={IndiaGeoJSON} /> */}
-          </MapContainer>
-        </div>
+            <MapContainer
+              center={[20.5937, 78.9629]}
+              zoom={5}
+              style={{ height: "80vh", width: "100%" }}
+            >
+              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+              <GeoJSON data={IndiaGeoJSON.features} />
+            </MapContainer>
+          </div>
         </div>
         <div>
           <div className="right-content">
