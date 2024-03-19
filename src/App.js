@@ -1,5 +1,5 @@
 import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
-import IndiaGeoJSON from "./assets/india_district.json"; // Import India GeoJSON data
+import IndiaGeoJSON from "./assets/Indian_States.json"; // Import India GeoJSON data
 import "leaflet/dist/leaflet.css"; // Import Leaflet CSS
 
 import logo from "./logo.png";
