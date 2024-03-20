@@ -52,9 +52,14 @@ import Plot from "./Plots";
 import PopupContent from "./PopupContent";
 import Donutchart from "./Piechart/Donutchart";
 import InputField from "./Inputs";
+
 function App() {
   const [currentStateImage, setCurrentStateImage] = useState(null);
   const [flag, setFlag] = useState(false);
+  const handleToggle = () => {
+    const toggleSwitch = document.querySelector(".toggleSwitch");
+    toggleSwitch.classList.toggle("on");
+  };
 
   const stateImages = {
     Maharashtra: MaharashtraImage,
@@ -210,6 +215,14 @@ function App() {
               </button> */}
             </div>
             <div className="rightbox">
+            <label className="toggleSwitch nolabel" onClick={handleToggle}>
+      <input type="checkbox" defaultChecked />
+      <span>
+        <span>Rural</span>
+        <span>Urban</span>
+      </span>
+      <a></a>
+    </label>
               <div className="stats">
                 <div className="stats-content">
                   Population
