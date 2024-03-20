@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import "./Inputs.css"
+import React, { useState } from "react";
+import "./Inputs.css";
 
 function InputField() {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
   const [percentage, setPercentage] = useState(0);
 
   const handleChange = (event) => {
@@ -11,7 +11,7 @@ function InputField() {
     if (/^\d{0,2}$/.test(inputValue) && parseInt(inputValue) <= 100) {
       setValue(inputValue);
       setPercentage(inputValue);
-    } else if (inputValue === '' || inputValue === '-') {
+    } else if (inputValue === "" || inputValue === "-") {
       // Allow empty or negative values
       setValue(inputValue);
       setPercentage(0);
@@ -20,7 +20,7 @@ function InputField() {
 
   return (
     <div>
-      <p className='value'>{value}%</p>
+      <p className="value">{value}</p>
       {/* <input
         className="inputs"
         type="text"
@@ -28,11 +28,13 @@ function InputField() {
         value={value}
         onChange={handleChange}
       /> */}
-      <div className="percentageLineContainer">
-        <div
-          className="percentageLine"
-          style={{ width: `${percentage}%` }}
-        ></div>
+      <div className="inputs" onClick={handleChange}>
+        <div className="percentageLineContainer">
+          <div
+            className="percentageLine"
+            style={{ transform: `rotate(${percentage * 3.6}deg)` }}
+          ></div>
+        </div>
       </div>
     </div>
   );

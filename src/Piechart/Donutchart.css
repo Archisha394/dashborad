@@ -1,0 +1,9 @@
+/* Chart.css */
+svg path {
+  stroke: none; /* Remove stroke */
+  border-radius: 10px;
+}
+
+svg path.segment {
+  border-radius: 10px; /* Add border radius */
+}

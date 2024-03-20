@@ -50,7 +50,8 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 import React, { useState } from "react";
 import Plot from "./Plots";
 import PopupContent from "./PopupContent";
-
+import Donutchart from "./Piechart/Donutchart";
+import InputField from "./Inputs";
 function App() {
   const [currentStateImage, setCurrentStateImage] = useState(null);
   const [flag, setFlag] = useState(false);
@@ -164,19 +165,6 @@ function App() {
           </div>
         </div>
         <div className="India-map">
-          {/* <div className="inputs">
-            <div className="part1">
-              <Input />
-              <Input />
-              <Input />
-            </div>
-            <div className="part2">
-              <Input />
-              <Input />
-              <Input />
-              <Input />
-            </div>
-          </div> */}
           <div className="India-map">
             {/* Use an image map for clickable areas */}
             <map name="indiaMap">
@@ -220,50 +208,23 @@ function App() {
               <div className="stats">
                 <div className="stats-content">
                   Population
-                  <span style={{ fontSize: "2rem" }}>23400</span>
+                  <span>(State)</span>
+                  <span style={{ fontSize: "2.8vh" }}>23400</span>
                 </div>
                 <div className="stats-content">
                   Literacy rate
-                  <span style={{ fontSize: "2rem" }}>96%</span>
+                  <span>(State)</span>
+                  <span style={{ fontSize: "2.8vh", paddingTop: "1vh " }}>
+                    96%
+                  </span>
                 </div>
               </div>
-              {/* <div className="gender-demo">
-                <img src={Graph21} alt="" />
-              </div> */}
-              <div className="women"></div>
-              {/* <div className="listItems">
-                <img src={people} alt="" />
-                <div className="sideText">
-                  {" "}
-                  Population: {population !== null
-                    ? population
-                    : "Loading..."}{" "}
-                </div>
-              </div> */}
-
-              {/* <div className="listItems">
-                <img src={sexeductn} alt="" />
-                <div className="sideText"> Sex-ratio: </div>
+              <div className="Donutchart">
+                <Donutchart />
               </div>
-              <div className="listItems">
-                <img src={literacy} alt="" />
-                <div className="sideText"> Literacy Rate: </div>
-              </div>
-              <div className="listItems">
-                <img src={harvest} alt="" />
-                <div className="sideText"> Agriculture yield: </div>
-              </div>
-              <div className="listItems">
-                <img src={man} alt="" />
-                <div className="sideText"> Male: </div>
-              </div>
-              <div className="listItems">
-                <img src={woman} alt="" />
-                <div className="sideText"> Female: </div>
-              </div> */}
+              <div>{/* <InputField /> */}</div>
             </div>
           </div>
-          <div className="piechart">{/* <Plot /> */}</div>
         </div>
         {showPopup && <PopupContent onClose={handleClosePopup} />}{" "}
         {/* Render the popup based on the state */}
