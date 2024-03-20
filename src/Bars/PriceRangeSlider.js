@@ -6,30 +6,28 @@ import Typography from "@mui/material/Typography";
 import Slider from "@mui/material/Slider";
 import MuiInput from "@mui/material/Input";
 
-
-
-
 const Input = styled(MuiInput)`
   width: 7vw; /* Adjusted width */
   background-color: #f3f3f3;
   border-radius: 6px;
-  align-items:center;
-  justify-content:center;
+  align-items: center;
+  justify-content: center;
   margin-left: 1vw;
-  height:4vh;
-  font-size:0.8rem;
+  height: 4vh;
+  font-size: 0.8rem;
 `;
 
 const StyledSliderWrapper = styled(Box)`
   width: 16vw;
-  margin:-1.5vh 0;
-  margin-left:1vw;
+  margin: -1% 0;
+  margin-left: 1vw;
 `;
 
 const InputBox = styled(Box)`
-  width:8vw;
+  width: 8vw;
   display: flex;
   flex-direction: row;
+  padding: -1% 0;
 `;
 
 const MainBox = styled(Box)`
@@ -42,10 +40,10 @@ const PopulationText = styled(Typography)`
   padding: 1vw 0 0 1vw;
 `;
 
-const InputText= styled(Typography)`
+const InputText = styled(Typography)`
   font-size: 0.8rem;
-  margin-top:1vh;
-  margin-left:1vh;
+  margin-top: 1vh;
+  margin-left: 1vh;
 `;
 
 export default function InputSlider() {
@@ -83,7 +81,6 @@ export default function InputSlider() {
 
   return (
     <MainBox sx={{ width: "20vw" }}>
-      
       <Grid container spacing={2} alignItems="center" justifyContent="center">
         <Grid item xs={12} className="inputs">
           <Box
@@ -93,7 +90,7 @@ export default function InputSlider() {
             paddingLeft="1vw" /* Adjusted padding */
           >
             <InputBox>
-             <InputText>Min</InputText>
+              <InputText>Min</InputText>
               <Input
                 value={minValue}
                 size="small"
@@ -110,7 +107,7 @@ export default function InputSlider() {
             </InputBox>
 
             <InputBox>
-            <InputText>Max</InputText>
+              <InputText>Max</InputText>
               <Input
                 value={maxValue}
                 size="small"
@@ -144,15 +141,15 @@ export default function InputSlider() {
 }
 
 const CustomSlider = styled(Slider)`
- &&{
-  .MuiSlider-track {
-    background: #0f1837;
-    border: none;
-    height: 6px;
-  }
-  .MuiSlider-thumb {
-      height: 2vh; /* Adjusted height */
-      width:2.5vh;
+  && {
+    .MuiSlider-track {
+      background: #0f1837;
+      border: none;
+      height: 6px;
     }
- }
+    .MuiSlider-thumb {
+      height: 2vh; /* Adjusted height */
+      width: 2.5vh;
+    }
+  }
 `;

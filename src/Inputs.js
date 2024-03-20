@@ -1,43 +1,27 @@
-import React, { useState } from "react";
-import "./Inputs.css";
+import React from 'react';
 
-function InputField() {
-  const [value, setValue] = useState("");
-  const [percentage, setPercentage] = useState(0);
-
-  const handleChange = (event) => {
-    const inputValue = event.target.value;
-    // Validate input to be between 0 and 100
-    if (/^\d{0,2}$/.test(inputValue) && parseInt(inputValue) <= 100) {
-      setValue(inputValue);
-      setPercentage(inputValue);
-    } else if (inputValue === "" || inputValue === "-") {
-      // Allow empty or negative values
-      setValue(inputValue);
-      setPercentage(0);
-    }
-  };
-
+const GenderDemographics = () => {
   return (
-    <div>
-      <p className="value">{value}</p>
-      {/* <input
-        className="inputs"
-        type="text"
-        placeholder="Number...."
-        value={value}
-        onChange={handleChange}
-      /> */}
-      <div className="inputs" onClick={handleChange}>
-        <div className="percentageLineContainer">
-          <div
-            className="percentageLine"
-            style={{ transform: `rotate(${percentage * 3.6}deg)` }}
-          ></div>
-        </div>
-      </div>
-    </div>
-  );
-}
+    <svg width="200" height="200">
+      {/* Blue circle representing the equal gender ratio */}
+      <circle cx="100" cy="100" r="80" fill="blue" />
 
-export default InputField;
+      {/* Text label for the gender ratio */}
+      <text x="100" y="100" textAnchor="middle" dominantBaseline="central" fill="white">
+        1:1
+      </text>
+
+      {/* Text label for the number of men */}
+      <text x="20" y="180" textAnchor="start" dominantBaseline="middle" fill="black">
+        Men 5.6K
+      </text>
+
+      {/* Text label for the number of women */}
+      <text x="180" y="180" textAnchor="end" dominantBaseline="middle" fill="black">
+        Women 5.9K
+      </text>
+    </svg>
+  );
+};
+
+export default GenderDemographics;
