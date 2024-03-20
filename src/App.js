@@ -150,12 +150,12 @@ function App() {
       </div>
       <div className="main-content">
         <div className="Slider-content">
-          <div className="slider">
+          <div className="slider1">
             <PriceRangeSlider />
             <PriceRangeSlider />
             <PriceRangeSlider />
           </div>
-          <div className="slider">
+          <div className="slider2">
             <PriceRangeSlider />
             <PriceRangeSlider />
           </div>

@@ -15,12 +15,12 @@ const Input = styled(MuiInput)`
 `;
 
 const StyledSliderWrapper = styled(Box)`
-  padding-left: 1vw;
-  width: 18vw;
+  width: 16vw;
 `;
 
 const InputBox = styled(Box)`
   padding: 1vw;
+  width:8vw;
   display: flex;
   flex-direction: row;
 `;

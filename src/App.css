@@ -67,11 +67,24 @@ body {
   align-items: center;
   display: flex;
   flex-direction: column;
+  width: auto;
 }
-.slider {
+.slider1 {
   display: flex;
   flex-direction: column;
-  width: 22vw;
+  width: 18vw;
+  height:30vh;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2vh;
+  margin-left: 2vw;
+}
+.slider2 {
+  display: flex;
+  flex-direction: column;
+  width: 18vw;
+  height:45vh;
   background: #ffffff;
   border-radius: 16px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
