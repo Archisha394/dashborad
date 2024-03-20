@@ -7,3 +7,51 @@ svg path {
 svg path.segment {
   border-radius: 10px; /* Add border radius */
 }
+/* DonutChart.css */
+.donut-chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.donut-chart-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.donut-chart-legend {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px; /* Adjust the gap between legend items */
+  justify-items: start; /* Align legend items to the start of the grid */
+}
+.donut-chart-svg-legend {
+  display: none;
+}
+.donut-chart-svg-innertext-label {
+  display: none;
+}
+.donut-chart-svg-innertext-value {
+  display: none;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.legend-color {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.legend-label {
+  font-size: 0.8rem;
+}
+
+.donut-chart-svg {
+  display: flex;
+  justify-content: center;
+}

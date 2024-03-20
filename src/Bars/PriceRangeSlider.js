@@ -19,7 +19,7 @@ const Input = styled(MuiInput)`
 
 const StyledSliderWrapper = styled(Box)`
   width: 16vw;
-  margin: -1% 0;
+  margin: -0.8vh 0;
   margin-left: 1vw;
 `;
 

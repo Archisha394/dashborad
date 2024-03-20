@@ -1,12 +1,17 @@
 import React from "react";
 import DonutChart from "react-donut-chart";
 import "./Donutchart.css";
+
 const Chart = () => {
   return (
     <div>
+      <div className="donut-chart-container">
+        <h2 className="donut-chart-title">Women Categories</h2>
+      </div>
       <DonutChart
-        width="300"
-        height="300"
+        className="donut-chart-svg"
+        width="200"
+        height="200"
         data={[
           {
             label: "Marginal Workers",
@@ -26,9 +31,34 @@ const Chart = () => {
           },
         ]}
         colors={["#114b75", "#16679F", "#1B7DC3", "#0E3D5F"]}
-        Title="Distribution of Workers"
         // legend={true}
+        // legendSpacing={3}
+        // legendFontSize={14}
+        // legendFontColor="#333"
+        // legendFontWeight="normal"
+        // legendItemSize={20}
+        // legendPosition="bottom"
       />
+      <div className="donut-chart-legend">
+        {[
+          "Marginal Workers",
+          "Skilled Workers",
+          "Unemployed Workers",
+          "Retired Workers",
+        ].map((label, index) => (
+          <div className="legend-item" key={index}>
+            <div
+              className="legend-color"
+              style={{
+                backgroundColor: ["#114b75", "#16679F", "#1B7DC3", "#0E3D5F"][
+                  index
+                ],
+              }}
+            ></div>
+            <span className="legend-label">{label}</span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
