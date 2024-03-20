@@ -152,12 +152,17 @@ function App() {
       <div className="main-content">
         <div className="Slider-content">
           <div className="slider1">
+          <div className="inputHeader"> Population</div>
             <PriceRangeSlider />
+            <div className="inputHeader">Working Population</div>
             <PriceRangeSlider />
+            <div className="inputHeader">Literacy Rate</div>
             <PriceRangeSlider />
           </div>
           <div className="slider2">
+          <div className="inputHeader"> Population</div>
             <PriceRangeSlider />
+          <div className="inputHeader"> Population</div>
             <PriceRangeSlider />
           </div>
           <div className="apply-button-div">
