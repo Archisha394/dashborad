@@ -8,7 +8,6 @@ import male from "./assets/male.png";
 import female from "./assets/female.png";
 import basic from "./assets/basic.png";
 import PriceRangeSlider from "./Bars/PriceRangeSlider";
-import Piechart from "./Piechart/Piechart";
 import man from "./assets/man 1.png";
 import literacy from "./assets/literacy 1.png";
 import people from "./assets/people 1.png";
@@ -51,6 +50,7 @@ import React, { useState } from "react";
 import Plot from "./Plots";
 import PopupContent from "./PopupContent";
 import Donutchart from "./Piechart/Donutchart";
+import Piechart from "./Piechart/Piechart";
 import InputField from "./Inputs";
 import Gender from "./ToggleSwitch/Gender";
 import Urban from "./ToggleSwitch/Urban";
@@ -213,7 +213,7 @@ function App() {
                 <Urban />
               </div>
 
-              <Gender />
+              
               <div className="stats">
                 <div className="stats-content">
                   Population
@@ -228,10 +228,11 @@ function App() {
                   </span>
                 </div>
               </div>
+              <Gender />
+              <div><Piechart/></div>
               <div className="Donutchart">
                 <Donutchart />
               </div>
-              <div>{/* <InputField /> */}</div>
             </div>
           </div>
         </div>

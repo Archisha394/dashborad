@@ -4,7 +4,7 @@ import "./Donutchart.css";
 
 const Chart = () => {
   return (
-    <div>
+    <div className="main">
       <div className="donut-chart-container">
         <h2 className="donut-chart-title">Women Categories</h2>
       </div>
@@ -31,15 +31,15 @@ const Chart = () => {
           },
         ]}
         colors={["#114b75", "#16679F", "#1B7DC3", "#0E3D5F"]}
-        legend={true}
-        legendSpacing={3}
-        legendFontSize={2}
-        legendFontColor="#333"
-        legendFontWeight="normal"
-        legendItemSize={10}
-        legendPosition="bottom"
+        // legend={true}
+        // legendSpacing={3}
+        // legendFontSize={2}
+        // legendFontColor="#333"
+        // legendFontWeight="normal"
+        // legendItemSize={10}
+        // legendPosition="bottom"
       />
-      {/* <div className="donut-chart-legend">
+      <div className="donut-chart-legend">
         {[
           "Marginal Workers",
           "Skilled Workers",
@@ -58,7 +58,7 @@ const Chart = () => {
             <span className="legend-label">{label}</span>
           </div>
         ))}
-      </div> */}
+      </div>
     </div>
   );
 };

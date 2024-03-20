@@ -1,4 +1,3 @@
-/* Chart.css */
 svg path {
   stroke: none; /* Remove stroke */
   border-radius: 10px;
@@ -8,13 +7,22 @@ svg path.segment {
   border-radius: 10px; /* Add border radius */
 }
 /* DonutChart.css */
+.main {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding-bottom: 10px;
+  margin-top: -1vh;
+  margin-bottom: 2vh;
+}
 .donut-chart-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.donut-chart-svg{
-  margin-left: 20%;
+.donut-chart-svg {
+  margin-left: 25%;
+  margin-top: -4%;
 }
 .donut-chart-title {
   font-size: 1rem;
@@ -27,10 +35,12 @@ svg path.segment {
   grid-template-columns: repeat(2, 1fr);
   gap: 3px; /* Adjust the gap between legend items */
   justify-items: start; /* Align legend items to the start of the grid */
-  margin-top: -30%;
-  margin-left: 10%;
+  margin-top: -20%;
+  margin-left: 15%;
 }
-
+.donut-chart-svg-legend {
+  display: none;
+}
 .donut-chart-svg-innertext-label {
   display: none;
 }

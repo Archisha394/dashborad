@@ -1,5 +1,6 @@
 .container {
   margin: vh 0;
+  margin-top: -1vh;
 }
 .switch {
   position: relative;
