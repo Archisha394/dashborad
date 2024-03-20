@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./Urban.css";
 
-const GenderSwitch = () => {
-  const [selectedOption, setSelectedOption] = useState("I");
+const GenderSwitch = ({ selectedOption, handleOptionChange }) => {
+  // const [selectedOption, setSelectedOption] = useState("I");
 
-  const handleOptionChange = (value) => {
-    setSelectedOption(value);
-  };
+  // const handleOptionChange = (value) => {
+  //   setSelectedOption(value);
+  // };
 
   return (
     <div className="gender-container">

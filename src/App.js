@@ -127,6 +127,13 @@ function App() {
     
   };
 
+  const [selectedOption, setSelectedOption] = useState("I");
+
+  const handleOptionChange = (value) => {
+    setSelectedOption(value);
+  };
+
+
   return (
     <div className="App">
       <div className="header">
@@ -187,9 +194,10 @@ function App() {
                   justifyContent: "space-between",
                 }}
               >
-                <Urban />
+                <Urban selectedOption={selectedOption}
+          handleOptionChange={handleOptionChange}/>
+          {selectedOption}
               </div>
-
               <div className="stats">
                 <div className="stats-content">
                   Population
