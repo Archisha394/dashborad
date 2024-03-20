@@ -26,9 +26,7 @@ svg path.segment {
   gap: 10px; /* Adjust the gap between legend items */
   justify-items: start; /* Align legend items to the start of the grid */
 }
-.donut-chart-svg-legend {
-  display: none;
-}
+
 .donut-chart-svg-innertext-label {
   display: none;
 }

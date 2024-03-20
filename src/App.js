@@ -52,7 +52,9 @@ import Plot from "./Plots";
 import PopupContent from "./PopupContent";
 import Donutchart from "./Piechart/Donutchart";
 import InputField from "./Inputs";
-
+import Gender from "./ToggleSwitch/Gender";
+import Urban from "./ToggleSwitch/Urban";
+import Basic from "./ToggleSwitch/Basic";
 function App() {
   const [currentStateImage, setCurrentStateImage] = useState(null);
   const [flag, setFlag] = useState(false);
@@ -198,31 +200,20 @@ function App() {
                 <span>{isBasic ? "Basic" : "Advance"}</span>
               </button>
             </div> */}
-            <div className="buttons">
-              {/* <button onClick={handleToggle_r}>
-                <img
-                  src={isRural ? ruralImage : urbanImage}
-                  alt={isRural ? "rural" : "urban"}
-                />
-                <span>{isRural ? "Rural" : "Urban"}</span>
-              </button>
-              <button onClick={handleToggle_m}>
-                <img
-                  src={isMale ? male : female}
-                  alt={isMale ? "male" : "female"}
-                />
-                <span>{isMale ? "Male" : "Female"}</span>
-              </button> */}
-            </div>
+
             <div className="rightbox">
-            <label className="toggleSwitch nolabel" onClick={handleToggle}>
-      <input type="checkbox" defaultChecked />
-      <span>
-        <span>Rural</span>
-        <span>Urban</span>
-      </span>
-      <a></a>
-    </label>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Basic />
+                <Urban />
+              </div>
+
+              <Gender />
               <div className="stats">
                 <div className="stats-content">
                   Population

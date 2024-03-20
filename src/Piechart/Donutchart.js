@@ -31,15 +31,15 @@ const Chart = () => {
           },
         ]}
         colors={["#114b75", "#16679F", "#1B7DC3", "#0E3D5F"]}
-        // legend={true}
-        // legendSpacing={3}
-        // legendFontSize={14}
-        // legendFontColor="#333"
-        // legendFontWeight="normal"
-        // legendItemSize={20}
-        // legendPosition="bottom"
+        legend={true}
+        legendSpacing={3}
+        legendFontSize={14}
+        legendFontColor="#333"
+        legendFontWeight="normal"
+        legendItemSize={20}
+        legendPosition="bottom"
       />
-      <div className="donut-chart-legend">
+      {/* <div className="donut-chart-legend">
         {[
           "Marginal Workers",
           "Skilled Workers",
@@ -58,7 +58,7 @@ const Chart = () => {
             <span className="legend-label">{label}</span>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

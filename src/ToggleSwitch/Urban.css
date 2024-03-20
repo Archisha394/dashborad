@@ -1,0 +1,65 @@
+.gender-container{
+    margin: -3vh 0;
+}
+.gender-switch {
+  position: relative;
+  height: 32px;
+  width: 140px;
+  margin: 20px auto;
+  background: #f2f2f2;
+  background: #d7d7d7;
+  border-radius: 32px;
+}
+
+.gender-switch-label {
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 70px;
+  line-height: 32px;
+  font-size: 12px;
+  color: #676a6c;
+  text-align: center;
+  cursor: pointer;
+}
+.gender-col-xs-12 {
+  display: flex;
+  padding: 0;
+}
+
+.gender-switch-input {
+  display: none;
+}
+
+.gender-switch-input:checked + .gender-switch-label {
+  color: #fff;
+  transition: 0.15s ease-out;
+  transition-property: color, text-shadow;
+}
+
+.gender-switch-input:checked
+  + .gender-switch-label-y
+  ~ .gender-switch-selector {
+  transform: translateX(0%);
+  background-color: #11283f;
+}
+.gender-switch-input:checked
+  + .gender-switch-label-i
+  ~ .gender-switch-selector {
+  transform: translateX(100%);
+  background-color: #11283f;
+}
+
+.gender-switch-selector {
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  display: block;
+  width: 70px;
+  height: 32px;
+  border-radius: 32px;
+  background-color: #1ab394;
+  transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
