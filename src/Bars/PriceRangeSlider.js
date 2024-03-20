@@ -5,30 +5,36 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Slider from "@mui/material/Slider";
 import MuiInput from "@mui/material/Input";
-import "./PriceRangeSlider.css";
 
 const Input = styled(MuiInput)`
-  width: 90px;
-  border: 1px solid #ffffff;
+  width: 5vw; /* Adjusted width */
   background-color: #f3f3f3;
   border-radius: 6px;
+  justify-content: space-between;
+  margin-left: 1vw;
 `;
 
 const StyledSliderWrapper = styled(Box)`
-  padding-left: 10px;
+  padding-left: 1vw;
+  width: 18vw;
 `;
 
 const InputBox = styled(Box)`
-  padding: 0 8px;
+  padding: 1vw;
+  display: flex;
+  flex-direction: row;
 `;
 
 const MainBox = styled(Box)`
-  border-radius: 0px 10px 10px 0px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adjust shadow as needed */
+  border-radius: 0px;
 `;
 const PopulationText = styled(Typography)`
-  color: white;
+  color: #050505;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 1vw 0 0 1vw;
 `;
+
 export default function InputSlider() {
   const [minValue, setMinValue] = React.useState(0);
   const [maxValue, setMaxValue] = React.useState(100);
@@ -63,19 +69,20 @@ export default function InputSlider() {
   };
 
   return (
-    <MainBox sx={{ width: 250 }}>
-      <PopulationText
-        className="populationtext"
-        variant="h6"
-        id="input-slider"
-        gutterBottom
-      >
+    <MainBox sx={{ width: "25vw" }}>
+      <PopulationText variant="h6" id="input-slider" gutterBottom>
         Population:
       </PopulationText>
       <Grid container spacing={2} alignItems="center" justifyContent="center">
         <Grid item xs={12} className="inputs">
-          <Box display="flex" justifyContent="center" alignItems="center" paddingLeft="10%">
+          <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            paddingLeft="1vw" /* Adjusted padding */
+          >
             <InputBox>
+              Min
               <Input
                 value={minValue}
                 size="small"
@@ -90,7 +97,9 @@ export default function InputSlider() {
                 }}
               />
             </InputBox>
+
             <InputBox>
+              Max
               <Input
                 value={maxValue}
                 size="small"
@@ -107,9 +116,10 @@ export default function InputSlider() {
             </InputBox>
           </Box>
         </Grid>
-        <Grid item xs={12} marginLeft="10%">
+        <Grid item xs={12} marginLeft="1vw">
           <StyledSliderWrapper>
             <CustomSlider
+              padding="0px"
               value={[minValue, maxValue]}
               onChange={handleSliderChange}
               aria-labelledby="input-slider"
@@ -124,7 +134,7 @@ export default function InputSlider() {
 
 const CustomSlider = styled(Slider)`
   .MuiSlider-track {
-    background: linear-gradient(to right, #ffb017, #ff6489);
+    background: #0f1837;
     border: none;
     height: 8px;
   }

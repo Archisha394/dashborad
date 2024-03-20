@@ -44,7 +44,7 @@ import KeralaImage from "./assets/stateImages/Kerala.png";
 import JnKImage from "./assets/stateImages/JnK.png";
 import DocumentCount from "./comp/DocumentCount";
 import Nagaland from "./comp/Nagaland";
-
+import Graph21 from "./assets/Graph 21.png";
 import db from "./comp/firebase-config";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import React, { useState } from "react";
@@ -140,7 +140,6 @@ function App() {
   const handleClosePopup = () => {
     setShowPopup(false); // Close the popup
     setIsBasic(true);
-
   };
 
   return (
@@ -151,37 +150,21 @@ function App() {
       </div>
       <div className="main-content">
         <div className="Slider-content">
-          <div className="buttons">
-            <button onClick={handleToggle_r}>
-              <img
-                src={isRural ? ruralImage : urbanImage}
-                alt={isRural ? "rural" : "urban"}
-              />
-              <span>{isRural ? "Rural" : "Urban"}</span>
-            </button>
-            <button onClick={handleToggle_m}>
-              <img
-                src={isMale ? male : female}
-                alt={isMale ? "male" : "female"}
-              />
-              <span>{isMale ? "Male" : "Female"}</span>
-            </button>
-          </div>
           <div className="slider">
+            <PriceRangeSlider />
             <PriceRangeSlider />
             <PriceRangeSlider />
           </div>
           <div className="slider">
             <PriceRangeSlider />
             <PriceRangeSlider />
-            <PriceRangeSlider />
-            <div className="apply-button-div">
-              <button className="apply-button">Apply</button>
-            </div>
+          </div>
+          <div className="apply-button-div">
+            <button className="apply-button">Apply</button>
           </div>
         </div>
         <div className="India-map">
-          <div className="inputs">
+          {/* <div className="inputs">
             <div className="part1">
               <Input />
               <Input />
@@ -193,7 +176,7 @@ function App() {
               <Input />
               <Input />
             </div>
-          </div>
+          </div> */}
           <div className="India-map">
             {/* Use an image map for clickable areas */}
             <map name="indiaMap">
@@ -211,17 +194,44 @@ function App() {
         </div>
         <div>
           <div className="right-content">
-            <div className="basicbuttons">
+            {/* <div className="basicbuttons">
               <button onClick={handleToggle_b}>
                 <img src={basic} alt="basic" />
                 <span>{isBasic ? "Basic" : "Advance"}</span>
               </button>
+            </div> */}
+            <div className="buttons">
+              {/* <button onClick={handleToggle_r}>
+                <img
+                  src={isRural ? ruralImage : urbanImage}
+                  alt={isRural ? "rural" : "urban"}
+                />
+                <span>{isRural ? "Rural" : "Urban"}</span>
+              </button>
+              <button onClick={handleToggle_m}>
+                <img
+                  src={isMale ? male : female}
+                  alt={isMale ? "male" : "female"}
+                />
+                <span>{isMale ? "Male" : "Female"}</span>
+              </button> */}
             </div>
             <div className="rightbox">
-              <div className="rightheading">
-                <img className="indiaHeader" src={India} alt="" />
+              <div className="stats">
+                <div className="stats-content">
+                  Population
+                  <span style={{ fontSize: "2rem" }}>23400</span>
+                </div>
+                <div className="stats-content">
+                  Literacy rate
+                  <span style={{ fontSize: "2rem" }}>96%</span>
+                </div>
               </div>
-              <div className="listItems">
+              {/* <div className="gender-demo">
+                <img src={Graph21} alt="" />
+              </div> */}
+              <div className="women"></div>
+              {/* <div className="listItems">
                 <img src={people} alt="" />
                 <div className="sideText">
                   {" "}
@@ -229,9 +239,9 @@ function App() {
                     ? population
                     : "Loading..."}{" "}
                 </div>
-              </div>
+              </div> */}
 
-              <div className="listItems">
+              {/* <div className="listItems">
                 <img src={sexeductn} alt="" />
                 <div className="sideText"> Sex-ratio: </div>
               </div>
@@ -250,12 +260,10 @@ function App() {
               <div className="listItems">
                 <img src={woman} alt="" />
                 <div className="sideText"> Female: </div>
-              </div>
+              </div> */}
             </div>
           </div>
-          <div className="piechart">
-            <Plot />
-          </div>
+          <div className="piechart">{/* <Plot /> */}</div>
         </div>
         {showPopup && <PopupContent onClose={handleClosePopup} />}{" "}
         {/* Render the popup based on the state */}

@@ -1,21 +1,27 @@
 body {
-  background-color: #141d36;
+  background-color: #f6f6f6;
 }
 .header img {
   width: 1.5vw;
   padding-right: 5px;
 }
 .header {
-  background: linear-gradient(to bottom, #2e437d, #101933);
+  background: #081f37;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  justify-self: center;
   font-size: calc(10px + 2vmin);
+  border-radius: 10px;
   color: white;
-  padding: 5px;
-  width: 100%;
+  margin: 2vh 5%;
+  width: 90%;
+  box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.5),
+    0px 0px 10px rgba(255, 255, 255, 0.5), 0px 0px 25px rgba(0, 0, 0, 0.25); /* Added drop shadow */
+  padding: 1vh;
 }
+
 .main-content {
   display: flex;
   flex-direction: row;
@@ -35,9 +41,6 @@ body {
 .buttons {
   display: flex;
   justify-content: space-around;
-  background: linear-gradient(to right, #2e447f, #0f1830);
-  padding: 1vh 0;
-  width: 93%;
   border-radius: 0 15px 15px 0;
   box-shadow: inset 0px 0px 4px rgba(255, 255, 255, 0.5),
     0px 0px 10px rgba(255, 255, 255, 0.5);
@@ -61,31 +64,39 @@ body {
   margin-left: 0;
 }
 .Slider-content {
-  width: 20vw;
   align-items: center;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 .slider {
-  background: linear-gradient(135deg, #2e4174, #020308);
-  border-radius: 0 30px 30px 0;
-  box-shadow: inset 0px 0px 4px rgba(255, 255, 255, 0.5),
-    0px 0px 10px rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  width: 22vw;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2vh;
+  margin-left: 2vw;
 }
 .apply-button {
-  background: linear-gradient(to right, #00abc2, #295b62);
+  background: #081f37;
   border: none;
-  border-radius: 10px;
-  padding: 6px 25px; /* Adjust padding as needed */
+  border-radius: 16px;
+  padding: 15px 25px;
+  margin-bottom: 2vh;
   color: white;
   display: flex;
   justify-content: center;
   cursor: pointer;
+  width: 100%;
 }
 
 .apply-button-div {
   align-items: center;
   display: flex;
   justify-content: center;
+  width: 22vw;
+  margin-left: 2vw;
 }
 
 .basicbuttons button {
@@ -114,14 +125,31 @@ body {
 }
 
 .rightbox {
-  background: linear-gradient(135deg, #2e4174, #020308);
-  border-radius: 30px 0px 0px 30px;
-  box-shadow: inset 0px 0px 4px rgba(255, 255, 255, 0.5),
+  border-radius: 30px;
+  box-shadow: inset 4px rgba(255, 255, 255, 0.5),
     0px 0px 10px rgba(255, 255, 255, 0.5);
   width: "40%";
   height: fit-content;
   padding-right: 5vw;
   padding-bottom: 1vh;
+  display: flex;
+  flex-direction: column;
+}
+.stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.stats-content {
+  background: linear-gradient(135deg, #2e4174, #020308);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  border-radius: 10px;
+  padding: 1vw;
+  width: 6vw;
+  margin: 0.5vw;
 }
 
 .rightheading {
@@ -158,4 +186,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.gender-demo img {
+  width: 25%;
+  height: 25%;
 }
