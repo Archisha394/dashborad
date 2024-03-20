@@ -30,7 +30,7 @@ const Chart = () => {
             value: 34,
           },
         ]}
-        colors={["#114b75", "#16679F", "#1B7DC3", "#0E3D5F"]}
+        colors={["#0077b6", "#00b4d8", "#98c1d9", "#ee6c4d"]}
         // legend={true}
         // legendSpacing={3}
         // legendFontSize={2}
@@ -50,7 +50,8 @@ const Chart = () => {
             <div
               className="legend-color"
               style={{
-                backgroundColor: ["#114b75", "#16679F", "#1B7DC3", "#0E3D5F"][
+                // Set the color of the bars to blue
+                backgroundColor: ["#0077b6", "#00b4d8", "#98c1d9", "#ee6c4d"][
                   index
                 ],
               }}

@@ -30,8 +30,26 @@ function MyChart() {
 
   const axes = React.useMemo(
     () => [
-      { primary: true, type: "linear", position: "bottom" },
-      { type: "linear", position: "left" },
+      {
+        primary: true,
+        type: "linear",
+        position: "bottom",
+        marker: { color: "#000000" },
+        style: {
+          line: { stroke: "white" }, // Color of the axis line
+          ticks: { stroke: "white" }, // Color of the axis ticks
+          tickLabels: { fill: "white" }, // Color of the axis tick labels
+        },
+      },
+      {
+        type: "linear",
+        position: "left",
+        style: {
+          line: { stroke: "white" }, // Color of the axis line
+          ticks: { stroke: "white" }, // Color of the axis ticks
+          tickLabels: { fill: "white" }, // Color of the axis tick labels
+        },
+      },
     ],
     []
   );
@@ -43,6 +61,7 @@ function MyChart() {
       style={{
         width: "300px",
         height: "250px",
+        color: "white",
       }}
     >
       <Chart data={data} axes={axes} />

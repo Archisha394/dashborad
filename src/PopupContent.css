@@ -9,17 +9,18 @@
   justify-content: center;
   align-items: center;
   z-index: 5;
+  opacity: 90%;
 }
 
 .popup {
   background-color: #141d36; /* Transparent background */
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 40px;
 }
 
 .popup h2 {
   margin-top: 0;
-  color: orange;
+  color: white;
 }
 
 .popup button {

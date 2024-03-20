@@ -124,6 +124,7 @@ function App() {
   const handleClosePopup = () => {
     setShowPopup(false); // Close the popup
     setIsAdvanced(false); // Switch back to "Basic"
+    
   };
 
   return (
