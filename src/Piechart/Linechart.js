@@ -1,72 +1,36 @@
 import React from "react";
-import { Chart } from "react-charts";
+import { Chart } from "react-google-charts";
 
-function MyChart() {
-  const data = React.useMemo(
-    () => [
-      {
-        label: "Series 1",
-        data: [
-          [0, 1],
-          [1, 2],
-          [2, 4],
-          [3, 2],
-          [4, 7],
-        ],
-      },
-      {
-        label: "Series 2",
-        data: [
-          [0, 3],
-          [1, 1],
-          [2, 5],
-          [3, 6],
-          [4, 4],
-        ],
-      },
-    ],
-    []
-  );
+export const data = [
+  ["Task", "Hours per Day"],
+  ["Work", 11],
+  ["Eat", 2],
+  ["Commute", 2],
+  ["Watch TV", 2],
+];
 
-  const axes = React.useMemo(
-    () => [
-      {
-        primary: true,
-        type: "linear",
-        position: "bottom",
-        marker: { color: "#000000" },
-        style: {
-          line: { stroke: "white" }, // Color of the axis line
-          ticks: { stroke: "white" }, // Color of the axis ticks
-          tickLabels: { fill: "white" }, // Color of the axis tick labels
-        },
-      },
-      {
-        type: "linear",
-        position: "left",
-        style: {
-          line: { stroke: "white" }, // Color of the axis line
-          ticks: { stroke: "white" }, // Color of the axis ticks
-          tickLabels: { fill: "white" }, // Color of the axis tick labels
-        },
-      },
-    ],
-    []
-  );
+export const options = {
+  backgroundColor: "transparent", // Set background color to transparent
+  colors: ["#0077b6", "#00b4d8", "#98c1d9", "#ee6c4d"], // Set custom colors
+  legend: {
+    textStyle: {
+      color: "white", // Change legend text color to white
+    },
+  },
+  chartArea: {
+    width: "auto", // Reduce the size of the chart area
+    height: "auto", // Reduce the size of the chart area
+  },
+};
 
+export default function App() {
   return (
-    // A react-chart hyper-responsively and continuously fills the available
-    // space of its parent element automatically
-    <div
-      style={{
-        width: "300px",
-        height: "250px",
-        color: "white",
-      }}
-    >
-      <Chart data={data} axes={axes} />
-    </div>
+    <Chart
+      chartType="PieChart"
+      data={data}
+      options={options}
+      width={"auto"}
+      height={"auto"}
+    />
   );
 }
-
-export default MyChart;

@@ -19,7 +19,9 @@
     "react-charts": "^2.0.0-beta.7",
     "react-dom": "^18.2.0",
     "react-donut-chart": "^1.3.3",
+    "react-google-charts": "^4.0.1",
     "react-linechart": "^1.1.12",
+    "react-minimal-pie-chart": "^8.4.0",
     "react-plotly.js": "^2.6.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
