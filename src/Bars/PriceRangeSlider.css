@@ -1,4 +1,8 @@
 .populationtext{
-    font-size: 1rem;
+    font-size: 0.6rem;
     margin-left:1vw;
+}
+
+.inputnames{
+    font-size: 0.6rem;
 }

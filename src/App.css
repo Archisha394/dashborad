@@ -15,13 +15,18 @@ body {
   font-size: calc(10px + 2vmin);
   border-radius: 10px;
   color: white;
-  margin: 2vh 5%;
-  width: 90%;
+  margin: 2vh 3%;
   box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.5),
     0px 0px 10px rgba(255, 255, 255, 0.5), 0px 0px 25px rgba(0, 0, 0, 0.25); /* Added drop shadow */
   padding: 1vh;
 }
 
+.inputHeader{
+  color: #050505;
+  font-weight: bold;
+  font-size: 0.8rem;
+  padding:1.3vh 1vw;
+}
 .main-content {
   display: flex;
   flex-direction: row;
@@ -72,8 +77,8 @@ body {
 .slider1 {
   display: flex;
   flex-direction: column;
-  width: 18vw;
-  height:30vh;
+  width: auto;
+  height:auto;
   background: #ffffff;
   border-radius: 16px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -83,8 +88,8 @@ body {
 .slider2 {
   display: flex;
   flex-direction: column;
-  width: 18vw;
-  height:45vh;
+  width: auto;
+  height:auto;
   background: #ffffff;
   border-radius: 16px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -95,13 +100,13 @@ body {
   background: #081f37;
   border: none;
   border-radius: 16px;
-  padding: 15px 25px;
+  padding: 12px 25px;
   margin-bottom: 2vh;
   color: white;
   display: flex;
   justify-content: center;
   cursor: pointer;
-  width: 100%;
+  width: 90%;
 }
 
 .apply-button-div {
