@@ -2,12 +2,13 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 5;
 }
 
 .popup {
@@ -28,4 +29,12 @@
 .charts {
   display: flex;
   flex-direction: row;
+}
+.charts1 {
+  display: flex;
+  justify-content: space-around;
+}
+.close-button {
+  background-color: white;
+  color: #141d36;
 }

@@ -1,11 +1,13 @@
+// BasicSwitch.js
 import React, { useState } from "react";
 import "./Basic.css";
 
-const BasicSwitch = () => {
-  const [selectedOption, setSelectedOption] = useState("I");
+const BasicSwitch = ({ onToggle }) => {
+  const [selectedOption, setSelectedOption] = useState("Y");
 
   const handleOptionChange = (value) => {
     setSelectedOption(value);
+    onToggle(value === "I");
   };
 
   return (

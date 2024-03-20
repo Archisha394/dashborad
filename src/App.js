@@ -2,20 +2,9 @@
 import logo from "./logo.png";
 import "./App.css";
 import map from "./assets/Map.png";
-import ruralImage from "./assets/rural.png";
-import urbanImage from "./assets/urban.png";
-import male from "./assets/male.png";
-import female from "./assets/female.png";
-import basic from "./assets/basic.png";
+
 import PriceRangeSlider from "./Bars/PriceRangeSlider";
-import man from "./assets/man 1.png";
-import literacy from "./assets/literacy 1.png";
-import people from "./assets/people 1.png";
-import harvest from "./assets/harvest 1.png";
-import woman from "./assets/woman 1.png";
-import sexeductn from "./assets/sex-education 1.png";
-import India from "./assets/INDIA.png";
-import Input from "./Inputs";
+
 import ImageMapAreas from "./comp/ImageMapAreas";
 import MaharashtraImage from "./assets/stateImages/Maharashtra.png";
 import AndhraPImage from "./assets/stateImages/AndhraPradesh.png";
@@ -47,11 +36,9 @@ import Graph21 from "./assets/Graph 21.png";
 import db from "./comp/firebase-config";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import React, { useState } from "react";
-import Plot from "./Plots";
 import PopupContent from "./PopupContent";
 import Donutchart from "./Piechart/Donutchart";
 import Piechart from "./Piechart/Piechart";
-import InputField from "./Inputs";
 import Gender from "./ToggleSwitch/Gender";
 import Urban from "./ToggleSwitch/Urban";
 import Basic from "./ToggleSwitch/Basic";
@@ -126,28 +113,17 @@ function App() {
     }
   };
 
-  const [isRural, setIsRural] = useState(true);
-  const [isMale, setIsMale] = useState(true);
-  const [isBasic, setIsBasic] = useState(true);
-  const [showPopup, setShowPopup] = useState(false); // State for managing popup visibility
+  const [isAdvanced, setIsAdvanced] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
-  const handleToggle_r = () => {
-    setIsRural(!isRural);
-  };
-  const handleToggle_m = () => {
-    setIsMale(!isMale);
-  };
-
-  const handleToggle_b = () => {
-    setIsBasic(!isBasic);
-    if (isBasic) {
-      setShowPopup(true); // Show the popup when toggling to "Advance"
-    }
+  const handleToggle1 = (isAdvanced) => {
+    setIsAdvanced(isAdvanced);
+    setShowPopup(isAdvanced); // Show the popup when toggling to "Advanced"
   };
 
   const handleClosePopup = () => {
     setShowPopup(false); // Close the popup
-    setIsBasic(true);
+    setIsAdvanced(false); // Switch back to "Basic"
   };
 
   return (
@@ -209,11 +185,10 @@ function App() {
                   justifyContent: "space-between",
                 }}
               >
-                <Basic />
+                <Basic onToggle={handleToggle1} />
                 <Urban />
               </div>
 
-              
               <div className="stats">
                 <div className="stats-content">
                   Population
@@ -229,7 +204,9 @@ function App() {
                 </div>
               </div>
               <Gender />
-              <div><Piechart/></div>
+              <div>
+                <Piechart />
+              </div>
               <div className="Donutchart">
                 <Donutchart />
               </div>

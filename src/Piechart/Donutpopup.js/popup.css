@@ -1,0 +1,71 @@
+svg path {
+  stroke: none; /* Remove stroke */
+  border-radius: 10px;
+}
+
+svg path.segment {
+  border-radius: 10px; /* Add border radius */
+}
+/* DonutChart.css */
+.popup-main {
+  padding-bottom: 10px;
+  margin-top: -1vh;
+  margin-bottom: 2vh;
+}
+.donut-chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.donut-chart-svg {
+  margin-left: 25%;
+  margin-top: -4%;
+}
+.donut-chart-title {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.popup-donut-chart-legend {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3px; /* Adjust the gap between legend items */
+  justify-items: start; /* Align legend items to the start of the grid */
+  margin-top: -20%;
+  margin-left: 15%;
+  color: white;;
+}
+.donut-chart-svg-legend {
+  display: none;
+}
+.donut-chart-svg-innertext-label {
+  display: none;
+}
+.donut-chart-svg-innertext-value {
+  display: none;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  /* margin-right: 20px; */
+}
+
+.legend-color {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.legend-label {
+  font-size: 0.6rem;
+}
+
+.donut-chart-svg {
+  display: flex;
+  justify-content: center;
+}
+
+.react-donut-chart-legend {
+  font-size: 3px; /* Adjust the legend font size */
+}
