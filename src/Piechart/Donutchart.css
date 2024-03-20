@@ -13,9 +13,11 @@ svg path.segment {
   justify-content: center;
   align-items: center;
 }
-
+.donut-chart-svg{
+  margin-left: 20%;
+}
 .donut-chart-title {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
   text-align: center;
 }
@@ -23,8 +25,10 @@ svg path.segment {
 .donut-chart-legend {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px; /* Adjust the gap between legend items */
+  gap: 3px; /* Adjust the gap between legend items */
   justify-items: start; /* Align legend items to the start of the grid */
+  margin-top: -30%;
+  margin-left: 10%;
 }
 
 .donut-chart-svg-innertext-label {
@@ -36,7 +40,7 @@ svg path.segment {
 .legend-item {
   display: flex;
   align-items: center;
-  margin-right: 20px;
+  /* margin-right: 20px; */
 }
 
 .legend-color {
@@ -46,10 +50,14 @@ svg path.segment {
 }
 
 .legend-label {
-  font-size: 0.8rem;
+  font-size: 0.6rem;
 }
 
 .donut-chart-svg {
   display: flex;
   justify-content: center;
+}
+
+.react-donut-chart-legend {
+  font-size: 3px; /* Adjust the legend font size */
 }
