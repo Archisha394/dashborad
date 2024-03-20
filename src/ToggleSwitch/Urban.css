@@ -1,10 +1,10 @@
-.gender-container{
-    margin: -3vh 0;
+.gender-container {
+  margin: -3vh 0;
 }
 .gender-switch {
   position: relative;
   height: 32px;
-  width: 140px;
+  width: 300px;
   margin: 20px auto;
   background: #f2f2f2;
   background: #d7d7d7;
@@ -16,7 +16,7 @@
   position: relative;
   z-index: 2;
   float: left;
-  width: 70px;
+  width: 100px;
   line-height: 32px;
   font-size: 12px;
   color: #676a6c;
@@ -50,6 +50,12 @@
   transform: translateX(100%);
   background-color: #11283f;
 }
+.gender-switch-input:checked
+  + .gender-switch-label-n
+  ~ .gender-switch-selector {
+  transform: translateX(200%);
+  background-color: #11283f;
+}
 
 .gender-switch-selector {
   position: absolute;
@@ -57,9 +63,8 @@
   top: 0px;
   left: 0px;
   display: block;
-  width: 70px;
+  width: 100px;
   height: 32px;
   border-radius: 32px;
-  background-color: #1ab394;
   transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }

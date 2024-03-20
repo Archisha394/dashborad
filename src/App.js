@@ -134,6 +134,7 @@ function App() {
       </div>
       <div className="main-content">
         <div className="Slider-content">
+          <Basic onToggle={handleToggle1} />
           <div className="slider1">
             <div className="inputHeader"> Population</div>
             <PriceRangeSlider />
@@ -185,7 +186,6 @@ function App() {
                   justifyContent: "space-between",
                 }}
               >
-                <Basic onToggle={handleToggle1} />
                 <Urban />
               </div>
 

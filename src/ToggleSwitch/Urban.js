@@ -22,7 +22,10 @@ const GenderSwitch = () => {
               checked={selectedOption === "Y"}
               onChange={() => handleOptionChange("Y")}
             />
-            <label htmlFor="gender-switch-y" className="gender-switch-label gender-switch-label-y">
+            <label
+              htmlFor="gender-switch-y"
+              className="gender-switch-label gender-switch-label-y"
+            >
               Urban
             </label>
             <input
@@ -34,8 +37,26 @@ const GenderSwitch = () => {
               checked={selectedOption === "I"}
               onChange={() => handleOptionChange("I")}
             />
-            <label htmlFor="gender-switch-i" className="gender-switch-label gender-switch-label-i">
+            <label
+              htmlFor="gender-switch-i"
+              className="gender-switch-label gender-switch-label-i"
+            >
               Rural
+            </label>
+            <input
+              id="gender-switch-n"
+              name="gender-tripple"
+              type="radio"
+              value="N"
+              className="gender-switch-input"
+              checked={selectedOption === "N"}
+              onChange={() => handleOptionChange("N")}
+            />
+            <label
+              htmlFor="gender-switch-n"
+              className="gender-switch-label gender-switch-label-n"
+            >
+              Total
             </label>
             <span className="gender-switch-selector"></span>
           </div>
